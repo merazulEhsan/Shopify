@@ -1,6 +1,7 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/header/Header";
 import Navbar from "@/components/header/Navbar";
+import { dbConnect } from "@/services/dbConnection";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import "./globals.css";
@@ -11,7 +12,9 @@ export const metadata = {
   description: "Digital Shop",
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  await dbConnect();
+
   return (
     <html lang="en">
       <body>

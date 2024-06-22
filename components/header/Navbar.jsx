@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <nav className=" md:block hidden border-t border-gray-300 shadow-sm">
+    <nav className=" md:block hidden border-t border-gray-300 shadow bg-ghostWhite">
       <div className="container flex py-1.5">
         <div className="px-16 rounded bg-secondary flex items-center cursor-pointer relative group ">
           <span className="text-white">

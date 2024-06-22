@@ -1,30 +1,56 @@
+"use client";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import Image from "next/image";
 const Bannar = () => {
+  const banner = [
+    {
+      img: "/assets/banner-bg.jpg",
+    },
+    {
+      img: "/assets/banner1.jpg",
+    },
+    {
+      img: "/assets/banner2.jpg",
+    },
+  ];
   return (
-    <div
-      className="bg-cover bg-no-repeat bg-center py-36"
-      style={{ backgroundImage: "url('/assets/banner-bg.jpg')" }}
+    <Carousel
+      plugins={[
+        Autoplay({
+          delay: 5000,
+        }),
+      ]}
+      opts={{
+        align: "start",
+        loop: true,
+      }}
+      className="w-full "
     >
-      <div className="container">
-        <h1 className="md:text-6xl text-3xl text-gray-800 font-medium mb-4 capitalize">
-          best collection for <br /> home decoration
-        </h1>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam{" "}
-          <br />
-          accusantium perspiciatis, sapiente magni eos dolorum ex quos dolores
-          odio
-        </p>
-        <div className="mt-12">
-          <a
-            href="#"
-            className="bg-primary border border-primary text-white px-8 py-3 font-medium 
-                    rounded-md hover:bg-transparent hover:text-primary"
-          >
-            Shop Now
-          </a>
-        </div>
-      </div>
-    </div>
+      <CarouselContent>
+        {banner.map((ban, index) => (
+          <CarouselItem key={index}>
+            <div className="flex h-screen items-center justify-center">
+              <Image
+                className="w-full h-full object-fill"
+                width={500}
+                height={500}
+                src={ban.img}
+                alt=""
+              />{" "}
+            </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <CarouselPrevious className="shadow" />
+      <CarouselNext className="shadow" />
+    </Carousel>
   );
 };
 

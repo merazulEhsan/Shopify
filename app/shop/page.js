@@ -1,9 +1,12 @@
 import BreadCrumb from "@/components/BreadCrumb";
 import ProductCard from "@/components/ProductCard";
+import { getAllProducts } from "@/data/queries";
 import { faEllipsisVertical, faList } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const ShopPage = () => {
+const ShopPage = async () => {
+  const allProducts = await getAllProducts();
+
   return (
     <>
       <BreadCrumb value="Shop" />
@@ -27,7 +30,7 @@ const ShopPage = () => {
                     for="cat-1"
                     className="text-gray-600 ml-3 cusror-pointer"
                   >
-                    Bedroom
+                    Accessories
                   </label>
                   <div className="ml-auto text-gray-600 text-sm">(15)</div>
                 </div>
@@ -42,7 +45,7 @@ const ShopPage = () => {
                     for="cat-2"
                     className="text-gray-600 ml-3 cusror-pointer"
                   >
-                    Sofa
+                    T-shirt
                   </label>
                   <div className="ml-auto text-gray-600 text-sm">(9)</div>
                 </div>
@@ -57,7 +60,7 @@ const ShopPage = () => {
                     for="cat-3"
                     className="text-gray-600 ml-3 cusror-pointer"
                   >
-                    Office
+                    Shoe
                   </label>
                   <div className="ml-auto text-gray-600 text-sm">(21)</div>
                 </div>
@@ -72,7 +75,7 @@ const ShopPage = () => {
                     for="cat-4"
                     className="text-gray-600 ml-3 cusror-pointer"
                   >
-                    Outdoor
+                    Slipers & Sandels
                   </label>
                   <div className="ml-auto text-gray-600 text-sm">(10)</div>
                 </div>
@@ -216,12 +219,9 @@ const ShopPage = () => {
             </div>
           </div>
           <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4 xl:gap-x-10 ">
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
+            {allProducts?.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
           </div>
         </div>
       </div>

@@ -57,7 +57,7 @@ export default function Signup() {
                 className="py-2.5 px-10 my-4 inline-flex justify-center items-center gap-x-2 text-sm font-normal rounded border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-800"
               >
                 <svg
-                  class="flex-shrink-0 size-4"
+                  className="flex-shrink-0 size-4"
                   width="33"
                   height="32"
                   viewBox="0 0 33 32"
@@ -95,7 +95,7 @@ export default function Signup() {
                 </svg>
                 Sign in with Google
               </button>
-              <div class="flex items-center text-sm text-gray-600  before:flex-1 before:border-t before:border-gray-200 before:me-6 after:flex-1 after:border-t after:border-gray-200 after:ms-6 dark:text-neutral-500 dark:before:border-neutral-600 dark:after:border-neutral-600 font-roboto">
+              <div className="flex items-center text-sm text-gray-600  before:flex-1 before:border-t before:border-gray-200 before:me-6 after:flex-1 after:border-t after:border-gray-200 after:ms-6 dark:text-neutral-500 dark:before:border-neutral-600 dark:after:border-neutral-600 font-roboto">
                 Or Sign Up with Email
               </div>
             </div>

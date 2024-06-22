@@ -9,9 +9,9 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import {
-  faBagShopping,
   faBars,
   faBarsStaggered,
+  faCartArrowDown,
   faHeart,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
@@ -22,7 +22,7 @@ import SearchBox from "../SearchBox";
 
 const Header = () => {
   return (
-    <header className="py-4 shadow-sm bg-white">
+    <header className="py-4 bg-ghostWhite">
       <div className="container flex items-center justify-between">
         <Link href="/">
           <div className="flex items-center space-x-1">
@@ -57,7 +57,7 @@ const Header = () => {
             className="text-center text-gray-700 hover:text-primary transition relative"
           >
             <div className="text-2xl">
-              <FontAwesomeIcon icon={faBagShopping} />
+              <FontAwesomeIcon icon={faCartArrowDown} />
             </div>
             <div className="text-xs leading-3">Cart</div>
             <div className="absolute -right-3 -top-1 w-5 h-5 rounded-full flex items-center justify-center bg-primary text-white text-xs border-2 border-white">
