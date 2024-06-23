@@ -29,8 +29,15 @@ const ProductDetails = ({ product }) => {
 
   return (
     <div className="container grid md:grid-cols-2 gap-6">
-      <div className="flex">
-        <div className="space-y-3">
+      <div className="">
+        <Image
+          width={500}
+          height={500}
+          src={thumbnail}
+          alt="product"
+          className="object-contain"
+        />
+        <div className="grid grid-cols-5 gap-4 mt-4">
           {image?.map((image, index) => (
             <Image
               key={index}
@@ -42,13 +49,6 @@ const ProductDetails = ({ product }) => {
             />
           ))}
         </div>
-        <Image
-          width={500}
-          height={500}
-          src={thumbnail}
-          alt="product"
-          className="object-contain h-full"
-        />
       </div>
 
       <div>

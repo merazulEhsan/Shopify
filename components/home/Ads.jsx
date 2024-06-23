@@ -10,7 +10,7 @@ const Ads = () => {
           className="w-full h-96"
           width={100}
           height={300}
-          quality={100}
+          quality={90}
         />
       </a>
     </div>

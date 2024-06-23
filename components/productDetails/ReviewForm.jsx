@@ -10,7 +10,6 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -38,10 +37,23 @@ export default function ReviewForm() {
           onSubmit={form.handleSubmit(onSubmit)}
           className=" flex flex-col justify-center my-5 w-full space-y-4"
         >
-          <div className="grid w-full gap-1.5">
-            <Label htmlFor="message">Your Review</Label>
-            <Textarea placeholder="Type your review here." id="message" />
-          </div>
+          <FormField
+            control={form.control}
+            name="name"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Your Name</FormLabel>
+                <FormControl>
+                  <Textarea
+                    placeholder="Type your review here."
+                    id="message"
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage className="text-primary font-normal" />
+              </FormItem>
+            )}
+          />
           <FormField
             control={form.control}
             name="name"
@@ -73,7 +85,10 @@ export default function ReviewForm() {
             )}
           />
 
-          <Button variant="login" type="submit">
+          <Button
+            className="bg-secondary text-base text-white font-semibold hover:bg-black"
+            type="submit"
+          >
             Submit
           </Button>
         </form>

@@ -11,20 +11,20 @@ import Image from "next/image";
 const Bannar = () => {
   const banner = [
     {
-      img: "/assets/banner-bg.jpg",
+      img: "/assets/banner/banner3.jpg",
     },
     {
-      img: "/assets/banner1.jpg",
+      img: "/assets/banner/banner1.jpg",
     },
     {
-      img: "/assets/banner2.jpg",
+      img: "/assets/banner/banner2.jpg",
     },
   ];
   return (
     <Carousel
       plugins={[
         Autoplay({
-          delay: 5000,
+          delay: 10000,
         }),
       ]}
       opts={{
@@ -36,13 +36,14 @@ const Bannar = () => {
       <CarouselContent>
         {banner.map((ban, index) => (
           <CarouselItem key={index}>
-            <div className="flex h-screen items-center justify-center">
+            <div className="flex h-[520px] items-center justify-center">
               <Image
                 className="w-full h-full object-fill"
                 width={500}
                 height={500}
                 src={ban.img}
                 alt=""
+                quality={100}
               />{" "}
             </div>
           </CarouselItem>
