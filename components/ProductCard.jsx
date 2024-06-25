@@ -21,7 +21,7 @@ const ProductCard = ({ product }) => {
   } = product || {};
   const stars = new Array(rating).fill(0);
   return (
-    <div className="bg-white rounded group hover:shadow">
+    <div className="bg-white rounded-md group hover:shadow">
       <div className="relative overflow-hidden">
         <div className="h-80 lg:w-60 xl:w-72">
           <Image
@@ -58,7 +58,7 @@ const ProductCard = ({ product }) => {
         </div>
       </div>
 
-      <div className="pt-4 pb-3 px-2">
+      <div className="pt-4 pb-3 px-2.5">
         <p className="text-sm text-gray-600 font-medium">{category}</p>
         <Link href={`/details/${id}`}>
           <h4 className="uppercase font-medium text-base mb-2 text-gray-800 hover:text-secondary transition">

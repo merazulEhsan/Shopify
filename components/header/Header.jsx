@@ -44,23 +44,23 @@ const Header = () => {
             href="/wishlist"
             className="text-center text-gray-700 hover:text-primary transition relative"
           >
-            <div className="text-2xl">
+            <div className="text-xl">
               <FontAwesomeIcon icon={faHeart} />
             </div>
             <div className="text-xs leading-3">Wishlist</div>
-            <div className="absolute right-0 -top-1 w-5 h-5 rounded-full flex items-center justify-center bg-primary text-white text-xs border-2 border-white">
-              0
+            <div className="absolute right-0 -top-1 w-4 h-4 rounded-full flex items-center justify-center bg-primary text-white text-xs border-2 border-white p-2 ">
+              2
             </div>
           </Link>
           <a
             href="#"
             className="text-center text-gray-700 hover:text-primary transition relative"
           >
-            <div className="text-2xl">
+            <div className="text-xl">
               <FontAwesomeIcon icon={faCartArrowDown} />
             </div>
             <div className="text-xs leading-3">Cart</div>
-            <div className="absolute -right-3 -top-1 w-5 h-5 rounded-full flex items-center justify-center bg-primary text-white text-xs border-2 border-white">
+            <div className="absolute -right-3 -top-1 w-4 h-4 rounded-full flex items-center justify-center bg-primary text-white text-xs border-2 border-white p-2">
               0
             </div>
           </a>
@@ -68,7 +68,7 @@ const Header = () => {
             href="#"
             className="text-center text-gray-700 hover:text-primary transition relative"
           >
-            <div className="text-2xl">
+            <div className="text-xl">
               <FontAwesomeIcon icon={faUser} />
             </div>
             <div className="text-xs leading-3">Account</div>

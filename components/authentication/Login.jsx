@@ -1,5 +1,6 @@
 "use client";
 
+import { login } from "@/app/actions";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
@@ -13,6 +14,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -22,21 +25,33 @@ const formSchema = z.object({
 });
 
 export default function Login() {
+  const router = useRouter();
+  const [error, setError] = useState(null);
   const form = useForm({
     resolver: zodResolver(formSchema),
   });
 
-  function onSubmit(data) {
-    console.log(data);
-  }
+  async function onSubmit(data) {
+    try {
+      const response = await login(data);
 
+      if (!!response.error) {
+        setError(response?.error);
+      } else {
+        router.push("/");
+      }
+    } catch (err) {
+      setError(err.message);
+    }
+  }
+  console.log(error);
   return (
     <div className="">
       <div className="mb-5">
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className="container flex flex-col justify-center font-roboto shadow-md p-10 my-10 w-full md:w-9/12 lg:w-1/3 space-y-4"
+            className="container flex flex-col justify-center font-roboto shadow-md p-10 my-10 min-w-max max-w-xl space-y-4"
           >
             <div className="mb-5 text-center">
               <h1 className="text-3xl font-poppins font-semibold pb-4">
@@ -64,7 +79,7 @@ export default function Login() {
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g clip-path="url(#clip0_4132_5805adfqfqdq121)">
+                  <g clipPath="url(#clip0_4132_5805adfqfqdq121)">
                     <path
                       d="M32.2566 16.36C32.2566 15.04 32.1567 14.08 31.9171 13.08H16.9166V19.02H25.7251C25.5454 20.5 24.5866 22.72 22.4494 24.22L22.4294 24.42L27.1633 28.1L27.4828 28.14C30.5189 25.34 32.2566 21.22 32.2566 16.36Z"
                       fill="#4285F4"
@@ -146,8 +161,11 @@ export default function Login() {
                 Forget Password?
               </Link>
             </div>
-            <Button variant="login" type="submit">
-              Log In
+            <Button
+              type="submit"
+              className="bg-black text-white hover:bg-white hover:text-black border border-black transition ease-in-out duration-300 uppercase"
+            >
+              LogIn
             </Button>
           </form>
         </Form>

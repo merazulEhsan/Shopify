@@ -13,22 +13,52 @@ import {
 import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 import { z } from "zod";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Enter valid name" }),
   email: z.string().min(2, { message: "Enter valid email" }),
   password: z.string().min(6, { message: "Enter minimum 6 charecters" }),
+  checkbox: z
+    .boolean()
+    .refine(
+      (value) => value === true,
+      "You must agree to the terms & conditions"
+    ),
 });
 
 export default function Signup() {
+  const [error, setError] = useState("");
+  const router = useRouter();
   const form = useForm({
     resolver: zodResolver(formSchema),
   });
 
-  function onSubmit(data) {
-    console.log(data);
+  async function onSubmit(data) {
+    try {
+      const response = await fetch("/api/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          data,
+        }),
+      });
+
+      if (response?.status === 201) {
+        router.push("/login");
+        toast.success("Registration Successfull");
+      }
+      response?.status === 203 &&
+        setError("User already exist with this email !!");
+    } catch (error) {
+      setError(error);
+    }
   }
 
   return (
@@ -37,7 +67,8 @@ export default function Signup() {
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className="container flex flex-col justify-center font-roboto shadow-md p-10 my-10 w-full md:w-9/12 lg:w-1/3 space-y-4"
+            autoComplete="off"
+            className="container flex flex-col justify-center font-roboto shadow-md p-10 my-10 w-full min-w-max max-w-xl space-y-4"
           >
             <div className="mb-5 text-center">
               <h1 className="text-3xl font-poppins font-semibold pb-4">
@@ -64,7 +95,7 @@ export default function Signup() {
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g clip-path="url(#clip0_4132_5805adfqfqdq121)">
+                  <g clipPath="url(#clip0_4132_5805adfqfqdq121)">
                     <path
                       d="M32.2566 16.36C32.2566 15.04 32.1567 14.08 31.9171 13.08H16.9166V19.02H25.7251C25.5454 20.5 24.5866 22.72 22.4494 24.22L22.4294 24.42L27.1633 28.1L27.4828 28.14C30.5189 25.34 32.2566 21.22 32.2566 16.36Z"
                       fill="#4285F4"
@@ -142,9 +173,29 @@ export default function Signup() {
                 </FormItem>
               )}
             />
-            <div className="py-1">
+            <FormField
+              control={form.control}
+              name="checkbox"
+              render={({ field }) => (
+                <FormItem className=" ">
+                  <div className="flex flex-row items-center space-x-2 ">
+                    <FormControl>
+                      <Checkbox
+                        checked={field.value}
+                        onCheckedChange={field.onChange}
+                      />
+                    </FormControl>
+                    <FormLabel>
+                      I accept the terms of the Service & Privacy Policy.
+                    </FormLabel>
+                  </div>
+                  <FormMessage className=" text-primary font-normal" />
+                </FormItem>
+              )}
+            />
+            {/* <div className="py-1">
               <div className="flex items-center space-x-2">
-                <Checkbox id="terms" />
+                <Checkbox onClick={() => setIsCheck(!isCheck)} id="terms" />
                 <label
                   htmlFor="terms"
                   className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
@@ -152,8 +203,12 @@ export default function Signup() {
                   I accept the terms of the Service & Privacy Policy.
                 </label>
               </div>
-            </div>
-            <Button variant="login" type="submit">
+            </div> */}
+            {error && <p className="text-sm text-primary">{error}</p>}
+            <Button
+              className="bg-black text-white hover:bg-white hover:text-black border border-black transition ease-in-out duration-300 uppercase"
+              type="submit"
+            >
               Sign Up
             </Button>
           </form>

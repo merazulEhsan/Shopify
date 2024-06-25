@@ -1,3 +1,5 @@
+import { userModel } from "@/models/user-model";
+
 const {
   replaceMongoIdInArray,
   replaceMongoIdInObject,
@@ -16,4 +18,13 @@ async function getProductById(id) {
   return replaceMongoIdInObject(product);
 }
 
-export { getAllProducts, getProductById };
+// Registration user exist or not
+async function getUserExist(email) {
+  await dbConnect();
+  const user = await userModel?.find().lean();
+  const findUser = user.find((user) => user.email === email);
+
+  return findUser;
+}
+
+export { getAllProducts, getProductById, getUserExist };

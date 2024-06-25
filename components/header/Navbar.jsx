@@ -1,16 +1,21 @@
+import { auth } from "@/auth";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { LogIn } from "lucide-react";
 import Link from "next/link";
+import DropDownAccount from "./DropDownAccount";
 
-const Navbar = () => {
+const Navbar = async () => {
+  const session = await auth();
+
   return (
     <nav className=" md:block hidden border-t border-gray-300 shadow bg-ghostWhite">
-      <div className="container flex py-1.5">
-        <div className="px-16 rounded bg-secondary flex items-center cursor-pointer relative group ">
+      <div className="container flex ">
+        <div className="px-16 bg-secondary hover:bg-black flex items-center cursor-pointer relative group ">
           <span className="text-white">
             <FontAwesomeIcon icon={faBars} />
           </span>
-          <span className="capitalize ml-4 text-white font-poppins">
+          <span className="capitalize ml-4 text-white font-poppins py-4">
             All Categories
           </span>
 
@@ -87,7 +92,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className="flex items-center justify-between flex-grow md:pl-12 py-3 text-base font-medium font-roboto">
+        <div className="flex items-center justify-between flex-grow md:pl-12 py-1.5 text-base font-medium font-roboto">
           <div className="flex items-center space-x-6 capitalize">
             <Link
               href="/"
@@ -114,12 +119,19 @@ const Navbar = () => {
               Contact us
             </Link>
           </div>
-          <Link
-            href="/login"
-            className="text-gray-800 hover:text-secondary transition"
-          >
-            Login
-          </Link>
+          {session?.user ? (
+            <div className="  flex items-center gap-4">
+              <DropDownAccount user={session?.user} />
+            </div>
+          ) : (
+            <Link
+              href="/login"
+              className="flex items-center hover:text-secondary hover:bg-gray-200 px-3 py-2 rounded transition"
+            >
+              <LogIn className="mr-2 h-4 w-4" />
+              <span>Log In</span>
+            </Link>
+          )}
         </div>
       </div>
     </nav>
