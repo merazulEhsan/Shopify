@@ -17,6 +17,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 import { z } from "zod";
 
 const formSchema = z.object({
@@ -39,12 +40,14 @@ export default function Login() {
         setError(response?.error);
       } else {
         router.push("/");
+        router.refresh();
+        toast.info("Welcome Back to Shopify!");
       }
     } catch (err) {
       setError(err.message);
     }
   }
-  console.log(error);
+
   return (
     <div className="">
       <div className="mb-5">
@@ -161,6 +164,8 @@ export default function Login() {
                 Forget Password?
               </Link>
             </div>
+            {error && <p className="text-sm text-primary">{error}</p>}
+
             <Button
               type="submit"
               className="bg-black text-white hover:bg-white hover:text-black border border-black transition ease-in-out duration-300 uppercase"

@@ -1,14 +1,13 @@
-import {
-  faCartArrowDown,
-  faEye,
-  faHeart,
-  faStar,
-} from "@fortawesome/free-solid-svg-icons";
+import { useAuth } from "@/app/hooks/useAuth";
+import { faEye, faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
+import WishlistButton from "./uiBttons/WishlistButton";
 
-const ProductCard = ({ product }) => {
+const ProductCard = async ({ product }) => {
+  const { userId, session } = await useAuth();
+
   const {
     thumbnail,
     title,
@@ -20,6 +19,7 @@ const ProductCard = ({ product }) => {
     discountPrice,
   } = product || {};
   const stars = new Array(rating).fill(0);
+
   return (
     <div className="bg-white rounded-md group hover:shadow">
       <div className="relative overflow-hidden">
@@ -41,20 +41,8 @@ const ProductCard = ({ product }) => {
           >
             <FontAwesomeIcon icon={faEye} />
           </Link>
-          <Link
-            href="#"
-            className="text-gray-800 text-lg w-9 h-9 rounded-full bg-white flex items-center justify-center hover:bg-black hover:text-white transition shadow-md"
-            title="add to wishlist"
-          >
-            <FontAwesomeIcon icon={faHeart} />
-          </Link>
-          <Link
-            href="#"
-            className="text-gray-800 text-lg w-9 h-9 rounded-full bg-white flex items-center justify-center hover:bg-black hover:text-white transition shadow-md "
-            title="add to cart"
-          >
-            <FontAwesomeIcon icon={faCartArrowDown} />
-          </Link>
+
+          <WishlistButton session={session} uId={userId} pId={id} />
         </div>
       </div>
 

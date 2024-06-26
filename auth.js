@@ -48,6 +48,6 @@ export const {
   ],
   session: {
     strategy: "jwt",
-    // maxAge: 1 * 30 * 60, // 1 hours
+    maxAge: 1 * 30 * 60, // 1 hours
   },
 });

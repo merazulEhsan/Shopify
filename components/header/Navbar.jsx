@@ -93,28 +93,28 @@ const Navbar = async () => {
         </div>
 
         <div className="flex items-center justify-between flex-grow md:pl-12 py-1.5 text-base font-medium font-roboto">
-          <div className="flex items-center space-x-6 capitalize">
+          <div className="flex items-center space-x-2 capitalize ">
             <Link
               href="/"
-              className="text-gray-800 hover:text-secondary transition"
+              className="text-gray-800 hover:text-secondary hover:bg-white rounded px-3 py-2 transition"
             >
               Home
             </Link>
             <Link
               href="/shop"
-              className="text-gray-800 hover:text-secondary transition"
+              className="text-gray-800 hover:text-secondary hover:bg-white rounded px-3 py-2 transition"
             >
               Shop
             </Link>
             <Link
               href="#"
-              className="text-gray-800 hover:text-secondary transition"
+              className="text-gray-800 hover:text-secondary hover:bg-white rounded px-3 py-2 transition"
             >
-              About us
+              About
             </Link>
             <Link
               href="#"
-              className="text-gray-800 hover:text-secondary transition"
+              className="text-gray-800 hover:text-secondary hover:bg-white rounded px-3 py-2 transition"
             >
               Contact us
             </Link>
@@ -126,7 +126,7 @@ const Navbar = async () => {
           ) : (
             <Link
               href="/login"
-              className="flex items-center hover:text-secondary hover:bg-gray-200 px-3 py-2 rounded transition"
+              className="flex items-center hover:text-secondary border  hover:bg-white px-3 py-2 rounded transition"
             >
               <LogIn className="mr-2 h-4 w-4" />
               <span>Log In</span>

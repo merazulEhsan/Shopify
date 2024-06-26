@@ -42,7 +42,15 @@ const productSchema = new Schema({
     required: true,
   },
   reviews: {
-    type: Number,
+    type: Array,
+    required: false,
+  },
+  wishlist: {
+    type: Array,
+    required: false,
+  },
+  cart: {
+    type: Array,
     required: false,
   },
   thumbnail: {
