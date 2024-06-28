@@ -23,7 +23,7 @@ const DropDownAccount = ({ user }) => {
             <AvatarImage src="" alt="@shadcn" />
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
-          <div className="text-gray-500 leading-none font-roboto">
+          <div className="text-gray-600 leading-none font-roboto">
             <p className="text-xs">Hello, {user?.name}</p>
             <p className="text-sm cursor-pointer font-medium">
               Your Account <FontAwesomeIcon icon={faChevronDown} size="xs" />

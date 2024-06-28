@@ -1,5 +1,5 @@
 import { auth } from "@/auth";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBarsStaggered } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { LogIn } from "lucide-react";
 import Link from "next/link";
@@ -9,11 +9,11 @@ const Navbar = async () => {
   const session = await auth();
 
   return (
-    <nav className=" md:block hidden border-t border-gray-300 shadow bg-ghostWhite">
+    <nav className=" md:block hidden border-t border-gray-300 shadow ">
       <div className="container flex ">
-        <div className="px-16 bg-secondary hover:bg-black flex items-center cursor-pointer relative group ">
+        <div className="px-16 bg-secondary hover:bg-black flex items-center cursor-pointer relative group transition ease-linear duration-300">
           <span className="text-white">
-            <FontAwesomeIcon icon={faBars} />
+            <FontAwesomeIcon icon={faBarsStaggered} />
           </span>
           <span className="capitalize ml-4 text-white font-poppins py-4">
             All Categories
@@ -96,25 +96,25 @@ const Navbar = async () => {
           <div className="flex items-center space-x-2 capitalize ">
             <Link
               href="/"
-              className="text-gray-800 hover:text-secondary hover:bg-white rounded px-3 py-2 transition"
+              className="text-gray-800 hover:text-secondary hover:bg-ghostWhite rounded px-3 py-2 transition"
             >
               Home
             </Link>
             <Link
               href="/shop"
-              className="text-gray-800 hover:text-secondary hover:bg-white rounded px-3 py-2 transition"
+              className="text-gray-800 hover:text-secondary hover:bg-ghostWhite rounded px-3 py-2 transition"
             >
               Shop
             </Link>
             <Link
               href="#"
-              className="text-gray-800 hover:text-secondary hover:bg-white rounded px-3 py-2 transition"
+              className="text-gray-800 hover:text-secondary hover:bg-ghostWhite rounded px-3 py-2 transition"
             >
               About
             </Link>
             <Link
               href="#"
-              className="text-gray-800 hover:text-secondary hover:bg-white rounded px-3 py-2 transition"
+              className="text-gray-800 hover:text-secondary hover:bg-ghostWhite rounded px-3 py-2 transition"
             >
               Contact us
             </Link>

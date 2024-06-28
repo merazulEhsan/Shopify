@@ -30,6 +30,7 @@ module.exports = {
         secondary: "#0989ff",
         darkslategray: "#373f50",
         ghostWhite: "#f6f9fc",
+        whiteSmoke: "#f1f3f4",
       },
     },
   },

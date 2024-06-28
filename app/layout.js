@@ -6,6 +6,7 @@ import { dbConnect } from "@/services/dbConnection";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import "./globals.css";
+import { ThemeProvider } from "./providers/ThemeProvider";
 config.autoAddCss = false;
 
 export const metadata = {
@@ -19,12 +20,19 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Header />
-        <Navbar />
-        {children}
-        <Footer />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Header />
+          <Navbar />
+          {children}
+          <Footer />
 
-        <Toaster position="top-right" richColors expand={false} />
+          <Toaster position="top-right" richColors expand={false} />
+        </ThemeProvider>
       </body>
     </html>
   );

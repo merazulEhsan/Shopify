@@ -15,19 +15,19 @@ import {
   faBarsStaggered,
   faCartArrowDown,
   faHeart,
-  faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
 import SearchBox from "../SearchBox";
+import Theme from "../Theme";
 
 const Header = async () => {
   const { userId } = await useAuth();
   const wishlist = await getWishlist(userId);
 
   return (
-    <header className="py-4 bg-ghostWhite">
+    <header className="py-4 ">
       <div className="container flex items-center justify-between">
         <Link href="/">
           <div className="flex items-center space-x-1">
@@ -57,8 +57,8 @@ const Header = async () => {
               {wishlist ? wishlist?.length : 0}
             </div>
           </Link>
-          <a
-            href="#"
+          <Link
+            href="/cart"
             className="text-center text-gray-700 hover:text-primary transition relative"
           >
             <div className="text-xl">
@@ -68,16 +68,9 @@ const Header = async () => {
             <div className="absolute -right-3 -top-1 w-4 h-4 rounded-full flex items-center justify-center bg-primary text-white text-xs border-2 border-white p-2">
               0
             </div>
-          </a>
-          <a
-            href="#"
-            className="text-center text-gray-700 hover:text-primary transition relative"
-          >
-            <div className="text-xl">
-              <FontAwesomeIcon icon={faUser} />
-            </div>
-            <div className="text-xs leading-3">Account</div>
-          </a>
+          </Link>
+
+          <Theme />
         </div>
 
         {/* Mobile Responsive */}
@@ -119,7 +112,7 @@ const Header = async () => {
                 <a href="/" className="bg-ghostWhite px-4 py-2 rounded-sm">
                   Home
                 </a>
-                <a href="/" className="bg-ghostWhite px-4 py-2 rounded-sm">
+                <a href="/shop" className="bg-ghostWhite px-4 py-2 rounded-sm">
                   Shop
                 </a>
                 <a href="/" className="bg-ghostWhite px-4 py-2 rounded-sm">
@@ -128,10 +121,16 @@ const Header = async () => {
                 <a href="/" className="bg-ghostWhite px-4 py-2 rounded-sm">
                   Contact
                 </a>
-                <a href="/" className="bg-ghostWhite px-4 py-2 rounded-sm">
+                <Link
+                  href="/cart"
+                  className="bg-ghostWhite px-4 py-2 rounded-sm"
+                >
                   Shoping Cart
-                </a>
-                <a href="/" className="bg-ghostWhite px-4 py-2 rounded-sm">
+                </Link>
+                <a
+                  href="/wishlist"
+                  className="bg-ghostWhite px-4 py-2 rounded-sm"
+                >
                   Wishlist
                 </a>
                 <a href="/" className="bg-ghostWhite px-4 py-2 rounded-sm">

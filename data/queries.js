@@ -65,10 +65,29 @@ async function getWishlist(uId) {
   return replaceMongoIdInArray(wishlist);
 }
 
+async function removeWishlistProduct(id, uId) {
+  await dbConnect();
+  const user = await userModel?.findById(uId);
+  const product = await productModel?.findById(id);
+
+  if (product) {
+    const isUserInWishlist = await product?.wishlist?.find(
+      (id) => id.toString() === uId
+    );
+    if (isUserInWishlist) {
+      product?.wishlist?.pull(
+        new mongoose.Types.ObjectId(user?._id.toString())
+      );
+    }
+  }
+  product.save();
+}
+
 export {
   addWishlist,
   getAllProducts,
   getProductById,
   getUserExist,
   getWishlist,
+  removeWishlistProduct,
 };

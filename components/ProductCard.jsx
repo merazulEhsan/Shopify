@@ -3,6 +3,7 @@ import { faEye, faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
+import CartButton from "./uiBttons/CartButton";
 import WishlistButton from "./uiBttons/WishlistButton";
 
 const ProductCard = async ({ product }) => {
@@ -43,6 +44,7 @@ const ProductCard = async ({ product }) => {
           </Link>
 
           <WishlistButton session={session} uId={userId} pId={id} />
+          <CartButton uId={userId} product={product} />
         </div>
       </div>
 
