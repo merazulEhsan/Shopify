@@ -1,3 +1,5 @@
+"use client";
+
 import {
   faFacebookF,
   faInstagram,
@@ -8,6 +10,12 @@ import { faCartArrowDown, faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
+
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { toast } from "sonner";
+import { Label } from "../ui/label";
+import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 
 const ProductDetails = ({ product }) => {
   const {
@@ -26,6 +34,38 @@ const ProductDetails = ({ product }) => {
   } = product || {};
 
   const stars = new Array(rating).fill(0);
+
+  const [selectSize, setSelectSize] = useState(null);
+  const [quantity, setQuantity] = useState(1);
+  const value = localStorage.getItem("cart");
+  const storage = JSON.parse(value);
+  const [cart, setCart] = useState(storage || []);
+  const router = useRouter();
+
+  const handleAddToCart = () => {
+    const cartItem = {
+      product,
+      price: quantity * discountPrice,
+      quantity,
+    };
+
+    const index = cart.findIndex((cartItem) => cartItem?.product?.id === id);
+
+    if (index === -1) {
+      // Item not found in cart, add it
+      const updatedCart = [...cart, cartItem];
+      setCart(updatedCart);
+      localStorage.setItem("cart", JSON.stringify(updatedCart));
+      toast.success("Item added in your cart!");
+    } else {
+      // Item already exists in cart, update quantity
+      toast.info("Item already exists in your cart!");
+      const updatedCart = [...cart];
+      setCart(updatedCart);
+      localStorage.setItem("cart", JSON.stringify(updatedCart));
+    }
+    router.refresh("/layout");
+  };
 
   return (
     <div className="container grid md:grid-cols-2 gap-6">
@@ -51,7 +91,7 @@ const ProductDetails = ({ product }) => {
         </div>
       </div>
 
-      <div>
+      <div className="text-left">
         <h2 className="text-2xl font-medium uppercase mb-2">{title}</h2>
         <div className="flex items-center mb-4">
           <div className="flex gap-1 text-sm text-gray-300">
@@ -89,34 +129,47 @@ const ProductDetails = ({ product }) => {
         <div className="mt-4 flex items-center gap-2">
           <h3 className="text-gray-800 font-semibold">Quantity:</h3>
           <div className="flex border border-gray-300 text-gray-600 divide-x divide-gray-300 w-max">
-            <div className="h-8 w-8 text-xl flex items-center justify-center cursor-pointer select-none">
+            <button
+              onClick={() => setQuantity((prev) => prev - 1)}
+              className="h-8 w-8 text-xl flex items-center justify-center cursor-pointer select-none"
+            >
               -
-            </div>
+            </button>
             <div className="h-8 w-8 text-base flex items-center justify-center">
-              4
+              {quantity}
             </div>
-            <div className="h-8 w-8 text-xl flex items-center justify-center cursor-pointer select-none">
+            <button
+              onClick={() => setQuantity((prev) => prev + 1)}
+              className="h-8 w-8 text-xl flex items-center justify-center cursor-pointer select-none"
+            >
               +
-            </div>
+            </button>
           </div>
         </div>
 
         <div className="mt-5 space-x-2">
-          <span className="text-gray-800 font-semibold">Size :</span>
-          {size?.map((size, i) => (
-            <span className="border border-gray-300 p-1 text-gray-600" key={i}>
-              {size}
-            </span>
-          ))}
+          <RadioGroup
+            onValueChange={setSelectSize}
+            value={selectSize}
+            className="flex"
+          >
+            <span className="text-gray-800 font-semibold">Size :</span>
+            {size?.map((size, i) => (
+              <div className="flex items-center space-x-2" key={i}>
+                <RadioGroupItem value={size} id={`option-${i}`} />
+                <Label htmlFor={`option-${i}`}>{size}</Label>
+              </div>
+            ))}
+          </RadioGroup>
         </div>
 
         <div className="mt-4 flex gap-3 border-b border-gray-200 pb-5 pt-5">
-          <Link
-            href="#"
+          <button
+            onClick={handleAddToCart}
             className="bg-primary border border-primary text-white px-8 py-2 font-medium rounded uppercase flex items-center gap-2 hover:bg-transparent hover:text-primary transition"
           >
             <FontAwesomeIcon icon={faCartArrowDown} /> Add to cart
-          </Link>
+          </button>
           <Link
             href="#"
             className="border border-gray-300 text-gray-600 px-8 py-2 font-medium rounded uppercase flex items-center gap-2 hover:text-primary hover:border-primary transition"

@@ -1,4 +1,4 @@
-import { useAuth } from "@/app/hooks/useAuth";
+"use client";
 import {
   Sheet,
   SheetClose,
@@ -9,7 +9,6 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { getWishlist } from "@/data/queries";
 import {
   faBars,
   faBarsStaggered,
@@ -21,11 +20,9 @@ import Image from "next/image";
 import Link from "next/link";
 import SearchBox from "../SearchBox";
 import Theme from "../Theme";
+import CartLength from "../cart/CartLength";
 
-const Header = async () => {
-  const { userId } = await useAuth();
-  const wishlist = await getWishlist(userId);
-
+const Header = ({ wishlist }) => {
   return (
     <header className="py-4 ">
       <div className="container flex items-center justify-between">
@@ -66,7 +63,7 @@ const Header = async () => {
             </div>
             <div className="text-xs leading-3">Cart</div>
             <div className="absolute -right-3 -top-1 w-4 h-4 rounded-full flex items-center justify-center bg-primary text-white text-xs border-2 border-white p-2">
-              0
+              <CartLength />
             </div>
           </Link>
 

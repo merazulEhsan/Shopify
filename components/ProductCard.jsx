@@ -3,7 +3,9 @@ import { faEye, faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
+import { Dialog, DialogTrigger } from "./ui/dialog";
 import CartButton from "./uiBttons/CartButton";
+import CartModal from "./uiBttons/CartModal";
 import WishlistButton from "./uiBttons/WishlistButton";
 
 const ProductCard = async ({ product }) => {
@@ -44,7 +46,12 @@ const ProductCard = async ({ product }) => {
           </Link>
 
           <WishlistButton session={session} uId={userId} pId={id} />
-          <CartButton uId={userId} product={product} />
+          <Dialog>
+            <DialogTrigger>
+              <CartButton />
+            </DialogTrigger>
+            <CartModal product={product} />
+          </Dialog>
         </div>
       </div>
 
