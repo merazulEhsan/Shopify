@@ -1,55 +1,11 @@
 "use client";
+import { useCart } from "@/app/hooks/useCart";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import CartCard from "./CartCard";
 import SubTotalCard from "./SubTotalCard";
 
 const CartTable = () => {
-  const [cartItems, setCartItems] = useState([]);
-
-  useEffect(() => {
-    const storedCartItems = localStorage.getItem("cart");
-    if (storedCartItems) {
-      setCartItems(JSON.parse(storedCartItems));
-    }
-  }, []);
-
-  const handleRemove = (itemIdToRemove) => {
-    const updatedCartItems = cartItems.filter(
-      (item) => item?.product?.id !== itemIdToRemove
-    );
-    localStorage.setItem("cart", JSON.stringify(updatedCartItems));
-    setCartItems(updatedCartItems);
-  };
-
-  const handleIncrement = (itemId) => {
-    const updatedCart = cartItems.map((item) => {
-      if (item.product.id === itemId) {
-        return { ...item, quantity: item?.quantity + 1 };
-      }
-      return item;
-    });
-
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
-    setCartItems(updatedCart);
-  };
-  const handleDecrement = (itemId) => {
-    const updatedCart = cartItems.map((item) => {
-      if (item.product.id === itemId) {
-        return { ...item, quantity: item?.quantity - 1 };
-      }
-      return item;
-    });
-
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
-    setCartItems(updatedCart);
-  };
-
-  const calculateTotal = () => {
-    return cartItems?.reduce((total, item) => {
-      return total + item.quantity * item.price;
-    }, 0);
-  };
+  const { cartItems, setCartItems, removeFromCart, calculateTotal } = useCart();
 
   return (
     <>
@@ -83,10 +39,8 @@ const CartTable = () => {
                     {cartItems?.map((item) => (
                       <CartCard
                         item={item}
-                        key={item?.product?.id}
-                        onRemoveItem={handleRemove}
-                        onHanldeIncrement={handleIncrement}
-                        onHanldeDecrement={handleDecrement}
+                        key={item?.id}
+                        removeFromCart={removeFromCart}
                       />
                     ))}
                   </tbody>

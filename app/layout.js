@@ -9,6 +9,7 @@ import "./globals.css";
 
 import { getWishlist } from "@/data/queries";
 import { useAuth } from "./hooks/useAuth";
+import { CartProvider } from "./providers/CartProvider";
 import { ThemeProvider } from "./providers/ThemeProvider";
 config.autoAddCss = false;
 
@@ -31,12 +32,14 @@ export default async function RootLayout({ children }) {
           enableSystem
           disableTransitionOnChange
         >
-          <Header wishlist={wishlist} />
+          <CartProvider>
+            <Header wishlist={wishlist} />
 
-          <Navbar />
-          {children}
-          <Footer />
-          <Toaster position="bottom-right" richColors expand={false} />
+            <Navbar />
+            {children}
+            <Footer />
+            <Toaster position="bottom-right" richColors expand={false} />
+          </CartProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -4,17 +4,17 @@ import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 
 const SubTotalCard = ({ calculateTotal }) => {
   return (
-    <div className="md:col-span-3 col-span-12 p-4 rounded shadow-xl ">
-      <div className="flex justify-between border-b border-gray-300 text-gray-800 font-semibold py-3 text-base ">
+    <div className="md:col-span-3 col-span-12 p-4 rounded shadow-xl dark:bg-gray-800">
+      <div className="flex justify-between border-b border-gray-300 text-gray-800 font-semibold py-3 text-base dark:text-gray-400">
         <p>Subtotal</p>
         <p>${calculateTotal()}</p>
       </div>
-      <div className="space-y-2 mt-2 border-b border-gray-300">
-        <div className="flex justify-between font-semibold text-gray-800 py-2 text-sm">
+      <div className="space-y-2 mt-2 border-b border-gray-300 ">
+        <div className="flex justify-between font-semibold text-gray-800 py-2 text-sm dark:text-gray-400">
           <p>Shipping</p>
         </div>
         <RadioGroup defaultValue="comfortable" className="pb-4 text-gray-600">
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-2 dark:text-gray-400">
             <RadioGroupItem
               value="default"
               id="r1"
@@ -23,7 +23,7 @@ const SubTotalCard = ({ calculateTotal }) => {
             <Label htmlFor="r1">Inside Tangail</Label>
           </div>
 
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-2 dark:text-gray-400">
             <RadioGroupItem
               value="compact"
               id="r3"
@@ -31,7 +31,7 @@ const SubTotalCard = ({ calculateTotal }) => {
             />
             <Label htmlFor="r3">Outside Tangail</Label>
           </div>
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-2 dark:text-gray-400">
             <RadioGroupItem
               value="free"
               id="r4"
@@ -42,8 +42,8 @@ const SubTotalCard = ({ calculateTotal }) => {
         </RadioGroup>
       </div>
 
-      <div className="flex justify-between text-gray-800 font-medium py-3 uppercas">
-        <p className="font-semibold">Total</p>
+      <div className="flex justify-between text-gray-800 font-medium py-3 uppercas dark:text-gray-400">
+        <p className="font-semibol">Total</p>
         <p>$1280</p>
       </div>
 
