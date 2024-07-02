@@ -1,6 +1,7 @@
 import { useAuth } from "@/app/hooks/useAuth";
-import { faEye, faStar } from "@fortawesome/free-solid-svg-icons";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Eye } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Dialog, DialogTrigger } from "./ui/dialog";
@@ -24,13 +25,13 @@ const ProductCard = async ({ product }) => {
   const stars = new Array(rating).fill(0);
 
   return (
-    <div className="bg-white rounded-md group hover:shadow">
-      <div className="relative overflow-hidden">
-        <div className="h-80 lg:w-60 xl:w-72">
+    <div className="dark:bg-gray-800 rounded-md group hover:shadow p-4">
+      <div className="relative overflow-hidden ">
+        <div className="h-60 lg:w-60 dark:bg-gray-800 mx-auto overflow-clip rounded-md">
           <Image
             width={500}
             height={500}
-            className="h-full w-full group-hover:scale-110 transition ease-linear duration-200 object-contain"
+            className="h-full w-full group-hover:scale-110 transition ease-linear duration-500 object-contain"
             src={thumbnail}
             alt={title}
             quality={100}
@@ -42,7 +43,7 @@ const ProductCard = async ({ product }) => {
             className="text-gray-800 text-lg w-9 h-9 rounded-full bg-white flex items-center justify-center hover:bg-black hover:text-white transition shadow-md"
             title="view product"
           >
-            <FontAwesomeIcon icon={faEye} />
+            <Eye />
           </Link>
 
           <WishlistButton session={session} uId={userId} pId={id} />
@@ -55,10 +56,12 @@ const ProductCard = async ({ product }) => {
         </div>
       </div>
 
-      <div className="pt-4 pb-3 px-2.5">
-        <p className="text-sm text-gray-600 font-medium">{category}</p>
+      <div className=" px-2.5">
+        <p className="text-sm text-gray-600 dark:text-gray-400 font-medium my-2">
+          {category}
+        </p>
         <Link href={`/details/${id}`}>
-          <h4 className="uppercase font-medium text-base mb-2 text-gray-800 hover:text-secondary transition">
+          <h4 className="uppercase font-medium text-base mb-2 text-gray-800 hover:text-secondary transition dark:text-gray-300 dark:hover:text-secondary">
             {title}
           </h4>
         </Link>
@@ -70,7 +73,9 @@ const ProductCard = async ({ product }) => {
               </span>
             ))}
           </div>
-          <div className="text-xs text-gray-500 ml-3">(150)</div>
+          <div className="text-xs text-gray-500 dark:text-gray-300 ml-3">
+            (150) Reviews
+          </div>
         </div>
         <div className="flex items-baseline mb-1 space-x-2">
           <p className="text-base text-secondary font-semibold">

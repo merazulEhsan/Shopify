@@ -31,6 +31,7 @@ module.exports = {
         darkslategray: "#373f50",
         ghostWhite: "#f6f9fc",
         whiteSmoke: "#f1f3f4",
+        customBlack: "#0b1120",
       },
     },
   },

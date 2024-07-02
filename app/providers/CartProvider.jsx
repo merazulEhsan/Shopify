@@ -29,10 +29,11 @@ export const CartProvider = ({ children }) => {
     setCartItems(updatedCart);
   };
 
-  const removeFromCart = (itemId) => {
-    console.log(itemId);
+  const removeFromCart = (itemId, title) => {
     const updatedCart = cartItems.filter((item) => item.id !== itemId);
     localStorage.setItem("cart", JSON.stringify(updatedCart));
+    toast.warning(`${title} removed from your cart`);
+
     setCartItems(updatedCart);
   };
 

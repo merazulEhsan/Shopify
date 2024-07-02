@@ -26,7 +26,7 @@ const Header = ({ wishlist }) => {
   const { cartItems } = useCart();
 
   return (
-    <header className="py-4 ">
+    <header className="py-4 dark:bg-gray-800">
       <div className="container flex items-center justify-between">
         <Link href="/">
           <div className="flex items-center space-x-1">
@@ -46,7 +46,7 @@ const Header = ({ wishlist }) => {
         <div className="md:flex items-center space-x-4 font-roboto hidden">
           <Link
             href="/wishlist"
-            className="text-center text-gray-700 hover:text-primary transition relative"
+            className="text-center text-gray-700 dark:text-slate-200 hover:text-primary transition relative"
           >
             <div className="text-xl">
               <FontAwesomeIcon icon={faHeart} />
@@ -58,7 +58,7 @@ const Header = ({ wishlist }) => {
           </Link>
           <Link
             href="/cart"
-            className="text-center text-gray-700 hover:text-primary transition relative"
+            className="text-center text-gray-700 dark:text-slate-200 hover:text-primary transition relative"
           >
             <div className="text-xl">
               <FontAwesomeIcon icon={faCartArrowDown} />

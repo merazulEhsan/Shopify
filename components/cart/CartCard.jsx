@@ -43,8 +43,8 @@ const CartCard = ({ item, removeFromCart }) => {
 
       <td className="px-6 py-4">
         <button
-          onClick={() => removeFromCart(item?.id)}
-          className=" text-gray-500 cursor-pointer hover:text-primary space-x-1 dark:text-gray-400"
+          onClick={() => removeFromCart(item?.id, item?.title)}
+          className=" text-gray-500 cursor-pointer hover:text-primary space-x-1 dark:hover:text-primary dark:text-gray-400"
         >
           <FontAwesomeIcon icon={faTrash} />
           <span className="text-sm ">Remove</span>

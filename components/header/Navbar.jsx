@@ -9,7 +9,7 @@ const Navbar = async () => {
   const session = await auth();
 
   return (
-    <nav className=" md:block hidden border-t border-gray-300 shadow ">
+    <nav className=" md:block hidden border-t border-gray-300 dark:border-gray-600 shadow-2xl dark:bg-gray-800">
       <div className="container flex ">
         <div className="px-16 bg-secondary hover:bg-black flex items-center cursor-pointer relative group transition ease-linear duration-300">
           <span className="text-white">
@@ -21,7 +21,7 @@ const Navbar = async () => {
 
           <div
             className="absolute z-50 left-0 top-full bg-white shadow-md py-3 divide-y divide-gray-300 divide-dashed opacity-0 group-hover:opacity-100 transition duration-300 invisible group-hover:visible w-[600px]"
-            style={{ width: "300px" }}
+            style={{ width: "260px" }}
           >
             <a
               href="#"
@@ -92,29 +92,29 @@ const Navbar = async () => {
           </div>
         </div>
 
-        <div className="flex items-center justify-between flex-grow md:pl-12 py-1.5 text-base font-medium font-roboto">
+        <div className="flex items-center justify-between flex-grow md:pl-12 py-1.5 text-base font-medium  ">
           <div className="flex items-center space-x-2 capitalize ">
             <Link
               href="/"
-              className="text-gray-800 hover:text-secondary hover:bg-ghostWhite rounded px-3 py-2 transition"
+              className="text-gray-800 dark:text-white hover:text-secondary dark:hover:text-secondary rounded px-3 py-2 transition"
             >
               Home
             </Link>
             <Link
               href="/shop"
-              className="text-gray-800 hover:text-secondary hover:bg-ghostWhite rounded px-3 py-2 transition"
+              className="text-gray-800 dark:text-white hover:text-secondary dark:hover:text-secondary rounded px-3 py-2 transition"
             >
               Shop
             </Link>
             <Link
               href="#"
-              className="text-gray-800 hover:text-secondary hover:bg-ghostWhite rounded px-3 py-2 transition"
+              className="text-gray-800 dark:text-white hover:text-secondary dark:hover:text-secondary rounded px-3 py-2 transition"
             >
               About
             </Link>
             <Link
               href="#"
-              className="text-gray-800 hover:text-secondary hover:bg-ghostWhite rounded px-3 py-2 transition"
+              className="text-gray-800 dark:text-white hover:text-secondary dark:hover:text-secondary rounded px-3 py-2 transition"
             >
               Contact us
             </Link>
@@ -126,7 +126,7 @@ const Navbar = async () => {
           ) : (
             <Link
               href="/login"
-              className="flex items-center hover:text-secondary border  hover:bg-white px-3 py-2 rounded transition"
+              className="flex items-center hover:text-secondary border px-3 py-2 rounded transition"
             >
               <LogIn className="mr-2 h-4 w-4" />
               <span>Log In</span>

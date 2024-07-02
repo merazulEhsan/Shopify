@@ -1,8 +1,7 @@
 import BreadCrumb from "@/components/BreadCrumb";
 import ProductCard from "@/components/ProductCard";
 import { getAllProducts } from "@/data/queries";
-import { faEllipsisVertical, faList } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { LayoutGrid, LayoutList } from "lucide-react";
 
 const ShopPage = async () => {
   const allProducts = await getAllProducts();
@@ -11,15 +10,15 @@ const ShopPage = async () => {
     <>
       <BreadCrumb value="Shop" />
 
-      <div className="container grid lg:grid-cols-4 grid-cols-2 gap-6 pt-4 pb-16">
-        <div className="col-span-2 md:col-span-1 bg-white  pb-6 rounded ">
-          <div className="divide-y divide-gray-200 space-y-5">
-            <div>
+      <div className="container grid grid-cols-12 gap-6 pt-4 pb-16">
+        <div className="md:col-span-3 col-span-full dark:bg-gray-800 pb-6 rounded ">
+          <div className="divide-y divide-gray-200 space-y-5 p-4">
+            <div className="">
               <h3 className="text-xl text-gray-800 mb-3 uppercase font-medium border-b border-gray-200">
                 Categories
               </h3>
               <div className="space-y-2">
-                <div className="flex items-center">
+                <div className="flex items-center ">
                   <input
                     type="checkbox"
                     name="cat-1"
@@ -28,11 +27,13 @@ const ShopPage = async () => {
                   />
                   <label
                     for="cat-1"
-                    className="text-gray-600 ml-3 cusror-pointer"
+                    className="text-gray-600 dark:text-gray-300  ml-3 cusror-pointer"
                   >
                     Accessories
                   </label>
-                  <div className="ml-auto text-gray-600 text-sm">(15)</div>
+                  <div className="ml-auto text-gray-600 dark:text-gray-300 text-sm">
+                    (15)
+                  </div>
                 </div>
                 <div className="flex items-center">
                   <input
@@ -43,11 +44,13 @@ const ShopPage = async () => {
                   />
                   <label
                     for="cat-2"
-                    className="text-gray-600 ml-3 cusror-pointer"
+                    className="text-gray-600 dark:text-gray-300 ml-3 cusror-pointer"
                   >
                     T-shirt
                   </label>
-                  <div className="ml-auto text-gray-600 text-sm">(9)</div>
+                  <div className="ml-auto text-gray-600 dark:text-gray-300 text-sm">
+                    (9)
+                  </div>
                 </div>
                 <div className="flex items-center">
                   <input
@@ -58,11 +61,13 @@ const ShopPage = async () => {
                   />
                   <label
                     for="cat-3"
-                    className="text-gray-600 ml-3 cusror-pointer"
+                    className="text-gray-600 dark:text-gray-300 ml-3 cusror-pointer"
                   >
                     Shoe
                   </label>
-                  <div className="ml-auto text-gray-600 text-sm">(21)</div>
+                  <div className="ml-auto text-gray-600 dark:text-gray-300 text-sm">
+                    (21)
+                  </div>
                 </div>
                 <div className="flex items-center">
                   <input
@@ -73,11 +78,13 @@ const ShopPage = async () => {
                   />
                   <label
                     for="cat-4"
-                    className="text-gray-600 ml-3 cusror-pointer"
+                    className="text-gray-600 dark:text-gray-300 ml-3 cusror-pointer"
                   >
                     Slipers & Sandels
                   </label>
-                  <div className="ml-auto text-gray-600 text-sm">(10)</div>
+                  <div className="ml-auto text-gray-600 dark:text-gray-300 text-sm">
+                    (10)
+                  </div>
                 </div>
               </div>
             </div>
@@ -91,7 +98,7 @@ const ShopPage = async () => {
                   type="text"
                   name="min"
                   id="min"
-                  className="w-full border-gray-300 focus:border-primary rounded focus:ring-0 px-3 py-1 text-gray-600 shadow-sm"
+                  className="w-full border-gray-300 focus:border-primary rounded focus:ring-0 px-3 py-1 text-gray-600 dark:text-gray-300 shadow-sm"
                   placeholder="min"
                 />
                 <span className="mx-3 text-gray-500">-</span>
@@ -99,7 +106,7 @@ const ShopPage = async () => {
                   type="text"
                   name="max"
                   id="max"
-                  className="w-full border-gray-300 focus:border-primary rounded focus:ring-0 px-3 py-1 text-gray-600 shadow-sm"
+                  className="w-full border-gray-300 focus:border-primary rounded focus:ring-0 px-3 py-1 text-gray-600 dark:text-gray-300 shadow-sm"
                   placeholder="max"
                 />
               </div>
@@ -119,7 +126,7 @@ const ShopPage = async () => {
                   />
                   <label
                     for="size-xs"
-                    className="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600"
+                    className="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600 dark:text-gray-300"
                   >
                     XS
                   </label>
@@ -133,7 +140,7 @@ const ShopPage = async () => {
                   />
                   <label
                     for="size-sm"
-                    className="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600"
+                    className="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600 dark:text-gray-300"
                   >
                     S
                   </label>
@@ -147,7 +154,7 @@ const ShopPage = async () => {
                   />
                   <label
                     for="size-m"
-                    className="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600"
+                    className="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600 dark:text-gray-300"
                   >
                     M
                   </label>
@@ -161,7 +168,7 @@ const ShopPage = async () => {
                   />
                   <label
                     for="size-l"
-                    className="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600"
+                    className="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600 dark:text-gray-300"
                   >
                     L
                   </label>
@@ -175,7 +182,7 @@ const ShopPage = async () => {
                   />
                   <label
                     for="size-xl"
-                    className="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600"
+                    className="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600 dark:text-gray-300"
                   >
                     XL
                   </label>
@@ -196,18 +203,19 @@ const ShopPage = async () => {
           </div>
         </div>
 
-        <div className="col-span-2 md:col-span-3 ">
+        <div className="md:col-span-9 col-span-full ">
           <div className=" flex justify-between">
-            <div className="space-x-4 mb-10">
-              <span className="border h-10 w-10 border-black p-3 ">
-                <FontAwesomeIcon icon={faEllipsisVertical} />
-                <FontAwesomeIcon icon={faEllipsisVertical} />
-                <FontAwesomeIcon icon={faEllipsisVertical} />
+            <div className="space-x-2 mb-10 flex items-center cursor-pointer">
+              <span className="border border-gray-300 p-1.5">
+                <LayoutGrid className="text-gray-500" />
               </span>
-              <span className="border h-10 w-10 border-black p-3">
-                <FontAwesomeIcon icon={faList} />
+              <span className="border border-gray-300 p-1.5">
+                <LayoutList className="text-gray-500" />
               </span>
-              <span>Showing 1–12 of 37 results</span>
+
+              <span className="text-gray-600 dark:text-gray-300 pl-4">
+                Showing 1–12 of 37 results
+              </span>
             </div>
             <div>
               <button
@@ -218,7 +226,7 @@ const ShopPage = async () => {
               </button>
             </div>
           </div>
-          <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4 xl:gap-x-10 ">
+          <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4 ">
             {allProducts?.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}

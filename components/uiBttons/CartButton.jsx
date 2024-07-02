@@ -1,5 +1,4 @@
-import { faCartArrowDown } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { ShoppingCart } from "lucide-react";
 
 const CartButton = () => {
   return (
@@ -7,7 +6,7 @@ const CartButton = () => {
       className="text-gray-800 text-lg w-9 h-9 rounded-full bg-white flex items-center justify-center hover:bg-black hover:text-white transition shadow-md"
       title="add to wishlist"
     >
-      <FontAwesomeIcon icon={faCartArrowDown} />
+      <ShoppingCart />
     </div>
   );
 };

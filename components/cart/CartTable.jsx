@@ -57,7 +57,7 @@ const CartTable = () => {
           </p>
           <Link
             href="/shop"
-            className="px-10 py-3 text-center text-sm text-white bg-black border border-black rounded uppercase font-roboto font-medium hover:bg-white hover:text-black transition ease-linear duration-300"
+            className="px-10 py-3 text-center text-sm text-white bg-black border border-black rounded uppercase font-roboto font-medium hover:bg-white hover:text-black transition ease-linear duration-300 dark:bg-primary dark:hover:bg-white "
           >
             Continue Shopping
           </Link>

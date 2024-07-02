@@ -1,7 +1,15 @@
 import BreadCrumb from "@/components/BreadCrumb";
 import CartTable from "@/components/cart/CartTable";
+import { redirect } from "next/navigation";
+import { useAuth } from "../hooks/useAuth";
 
-const CartPage = () => {
+const CartPage = async () => {
+  const { session, userId } = await useAuth();
+
+  if (!session) {
+    redirect("/login");
+    toast.warning("Must have login to make wishlist.");
+  }
   return (
     <>
       <BreadCrumb value="Shopping Cart" />
