@@ -8,7 +8,9 @@ const ProductDescription = ({ details, chart }) => {
           Product details
         </h3> */}
         <div className="w-full flex justify-between gap-6 space-y-5">
-          <div className="text-gray-600 text-left">{details}</div>
+          <div className="text-gray-600 dark:text-gray-300  text-left">
+            {details}
+          </div>
           {chart && <Image width={500} height={500} src={chart} alt="chart" />}
         </div>
       </div>

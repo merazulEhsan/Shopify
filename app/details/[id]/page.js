@@ -17,9 +17,9 @@ const ProductDetailsPage = async ({ params: { id } }) => {
 
       <Tabs
         defaultValue="description"
-        className="w-full bg-white container mx-auto text-center my-20 "
+        className="w-full bg-white dark:bg-customBlack container mx-auto text-center my-20 "
       >
-        <TabsList className="border-b border-gray-300">
+        <TabsList className="border-b border-gray-300 dark:border-gray-500">
           <TabsTrigger value="description"> Product Details</TabsTrigger>
           <TabsTrigger value="reviews">Reviews (1)</TabsTrigger>
         </TabsList>

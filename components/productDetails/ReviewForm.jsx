@@ -31,7 +31,7 @@ export default function ReviewForm() {
   }
 
   return (
-    <div className="mb-5 text-gray-600">
+    <div className="mb-5 text-gray-600 dark:text-gray-400 ">
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
@@ -45,6 +45,7 @@ export default function ReviewForm() {
                 <FormLabel>Your Name</FormLabel>
                 <FormControl>
                   <Textarea
+                    className="dark:bg-transparent dark:border-gray-500 "
                     placeholder="Type your review here."
                     id="message"
                     {...field}
@@ -61,7 +62,12 @@ export default function ReviewForm() {
               <FormItem>
                 <FormLabel>Your Name</FormLabel>
                 <FormControl>
-                  <Input type="text" placeholder="John doe" {...field} />
+                  <Input
+                    type="text"
+                    placeholder="John doe"
+                    {...field}
+                    className="dark:bg-transparent dark:border-gray-500 "
+                  />
                 </FormControl>
                 <FormMessage className="text-primary font-normal" />
               </FormItem>
@@ -75,6 +81,7 @@ export default function ReviewForm() {
                 <FormLabel>Email</FormLabel>
                 <FormControl>
                   <Input
+                    className="dark:bg-transparent dark:border-gray-500 "
                     type="email"
                     placeholder="shopify@email.com"
                     {...field}
@@ -86,7 +93,7 @@ export default function ReviewForm() {
           />
 
           <Button
-            className="bg-secondary text-base text-white font-semibold hover:bg-black"
+            className="bg-secondary text-base text-white font-semibold hover:bg-black dark:hover:bg-gray-800"
             type="submit"
           >
             Submit

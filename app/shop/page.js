@@ -11,10 +11,10 @@ const ShopPage = async () => {
       <BreadCrumb value="Shop" />
 
       <div className="container grid grid-cols-12 gap-6 pt-4 pb-16">
-        <div className="md:col-span-3 col-span-full dark:bg-gray-800 pb-6 rounded ">
+        <div className="md:col-span-3 col-span-full dark:bg-transparent pb-6 rounded ">
           <div className="divide-y divide-gray-200 space-y-5 p-4">
             <div className="">
-              <h3 className="text-xl text-gray-800 mb-3 uppercase font-medium border-b border-gray-200">
+              <h3 className="text-xl text-gray-800 dark:text-gray-300 mb-3 uppercase font-medium border-b border-gray-200">
                 Categories
               </h3>
               <div className="space-y-2">
@@ -90,7 +90,7 @@ const ShopPage = async () => {
             </div>
 
             <div className="pt-4">
-              <h3 className="text-xl text-gray-800 mb-3 uppercase font-medium">
+              <h3 className="text-xl text-gray-800 dark:text-gray-300 mb-3 uppercase font-medium">
                 Price
               </h3>
               <div className="mt-4 flex items-center">
@@ -113,7 +113,7 @@ const ShopPage = async () => {
             </div>
 
             <div className="pt-4">
-              <h3 className="text-xl text-gray-800 mb-3 uppercase font-medium">
+              <h3 className="text-xl text-gray-800 dark:text-gray-300 mb-3 uppercase font-medium">
                 size
               </h3>
               <div className="flex items-center gap-2">
@@ -190,7 +190,7 @@ const ShopPage = async () => {
               </div>
             </div>
             <div className="pt-6">
-              <h3 className="text-xl text-gray-800 mb-3 uppercase font-medium border-b border-gray-200">
+              <h3 className="text-xl text-gray-800 dark:text-gray-300 mb-3 uppercase font-medium border-b border-gray-200">
                 Reset Filter
               </h3>
               <button

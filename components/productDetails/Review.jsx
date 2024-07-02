@@ -25,13 +25,13 @@ const Review = () => {
                 <FontAwesomeIcon icon={faStar} />
                 <FontAwesomeIcon icon={faStar} />
               </span>
-              <h1 className="font-medium text-base">
+              <h1 className="font-medium text-base ">
                 James J. Allen{" "}
-                <span className="text-gray-500 font-normal text-sm">
+                <span className="text-gray-500 font-normal text-sm dark:text-gray-400 ">
                   May 22, 2023
                 </span>
               </h1>
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-gray-500 dark:text-gray-400 ">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia,
                 aperiam.
               </p>
@@ -53,9 +53,11 @@ const Review = () => {
               </span>
               <h1 className="font-medium">
                 James J. Allen{" "}
-                <span className="text-gray-500 font-normal">May 22, 2023</span>
+                <span className="text-gray-500 font-normal dark:text-gray-400">
+                  May 22, 2023
+                </span>
               </h1>
-              <p className="text-sm text-gray-500 font-roboto">
+              <p className="text-sm text-gray-500 font-roboto dark:text-gray-400">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia,
                 aperiam.
               </p>
@@ -63,12 +65,12 @@ const Review = () => {
           </div>
         </div>
         <div className="md:w-1/2 text-left ">
-          <h1 className="text-xl font-medium mb-2 ">Review this product</h1>
-          <p className="text-sm mb-4 text-gray-600">
+          <h1 className="text-xl font-medium mb-2   ">Review this product</h1>
+          <p className="text-sm mb-4 text-gray-600 dark:text-gray-400 ">
             Your email address will not be published. Required fields are marked
             *
           </p>
-          <div className="text-left text-sm text-gray-600">
+          <div className="text-left text-sm text-gray-600 dark:text-gray-400 ">
             <span>Your Rating: </span>
             <span className="text-gray-300 space-x-1 text-xs">
               <FontAwesomeIcon icon={faStar} />
