@@ -32,7 +32,7 @@ const DropDownAccount = ({ user }) => {
           </div>
         </div>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-52 bg-white dark:bg-gray-800 dark:border-gray-800 px-4">
+      <DropdownMenuContent className="w-52 bg-white dark:bg-cardBlack dark:border-gray-800 px-4">
         <DropdownMenuLabel>My Account</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>

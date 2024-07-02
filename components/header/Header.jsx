@@ -26,7 +26,7 @@ const Header = ({ wishlist }) => {
   const { cartItems } = useCart();
 
   return (
-    <header className="py-4 dark:bg-gray-800">
+    <header className="py-4 dark:bg-cardBlack">
       <div className="container flex items-center justify-between">
         <Link href="/">
           <div className="flex items-center space-x-1">

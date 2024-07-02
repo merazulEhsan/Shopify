@@ -10,7 +10,7 @@ const CheckoutPage = () => {
           <div class="space-y-4">
             <div class="grid grid-cols-2 gap-4">
               <div>
-                <label for="first-name" class="text-gray-600">
+                <label htmlFor="first-name" class="text-gray-600">
                   First Name <span class="text-primary">*</span>
                 </label>
                 <input
@@ -21,7 +21,7 @@ const CheckoutPage = () => {
                 />
               </div>
               <div>
-                <label for="last-name" class="text-gray-600">
+                <label htmlFor="last-name" class="text-gray-600">
                   Last Name <span class="text-primary">*</span>
                 </label>
                 <input
@@ -33,7 +33,7 @@ const CheckoutPage = () => {
               </div>
             </div>
             <div>
-              <label for="company" class="text-gray-600">
+              <label htmlFor="company" class="text-gray-600">
                 Company
               </label>
               <input
@@ -44,13 +44,13 @@ const CheckoutPage = () => {
               />
             </div>
             <div>
-              <label for="region" class="text-gray-600">
+              <label htmlFor="region" class="text-gray-600">
                 Country/Region
               </label>
               <input type="text" name="region" id="region" class="input-box" />
             </div>
             <div>
-              <label for="address" class="text-gray-600">
+              <label htmlFor="address" class="text-gray-600">
                 Street address
               </label>
               <input
@@ -61,25 +61,25 @@ const CheckoutPage = () => {
               />
             </div>
             <div>
-              <label for="city" class="text-gray-600">
+              <label htmlFor="city" class="text-gray-600">
                 City
               </label>
               <input type="text" name="city" id="city" class="input-box" />
             </div>
             <div>
-              <label for="phone" class="text-gray-600">
+              <label htmlFor="phone" class="text-gray-600">
                 Phone number
               </label>
               <input type="text" name="phone" id="phone" class="input-box" />
             </div>
             <div>
-              <label for="email" class="text-gray-600">
+              <label htmlFor="email" class="text-gray-600">
                 Email address
               </label>
               <input type="email" name="email" id="email" class="input-box" />
             </div>
             <div>
-              <label for="company" class="text-gray-600">
+              <label htmlFor="company" class="text-gray-600">
                 Company
               </label>
               <input
@@ -154,7 +154,7 @@ const CheckoutPage = () => {
               class="text-primary focus:ring-0 rounded-sm cursor-pointer w-3 h-3"
             />
             <label
-              for="aggrement"
+              htmlFor="aggrement"
               class="text-gray-600 ml-3 cursor-pointer text-sm"
             >
               I agree to the{" "}

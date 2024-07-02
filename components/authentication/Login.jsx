@@ -53,7 +53,7 @@ export default function Login() {
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="container flex flex-col justify-center font-roboto shadow-md p-10 my-10 min-w-max max-w-xl space-y-4 dark:bg-gray-900 rounded"
+          className="container flex flex-col justify-center font-roboto shadow-md p-10 my-10 min-w-max max-w-xl space-y-4 dark:bg-cardBlack rounded"
         >
           <div className="mb-5 text-center">
             <h1 className="text-3xl font-poppins font-semibold pb-4">
@@ -124,6 +124,7 @@ export default function Login() {
                 <FormLabel>Email</FormLabel>
                 <FormControl>
                   <Input
+                    className="dark:bg-transparent"
                     type="email"
                     placeholder="shopify@email.com"
                     {...field}
@@ -140,7 +141,12 @@ export default function Login() {
               <FormItem>
                 <FormLabel>Password</FormLabel>
                 <FormControl>
-                  <Input type="password" placeholder="123456" {...field} />
+                  <Input
+                    className="dark:bg-transparent"
+                    type="password"
+                    placeholder="123456"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage className="text-primary font-normal" />
               </FormItem>
@@ -150,7 +156,7 @@ export default function Login() {
             <div className="flex items-center space-x-2">
               <Checkbox id="terms" />
               <label
-                htmlFor="terms"
+                htmlhtmlFor="terms"
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
               >
                 Remember Me

@@ -135,14 +135,14 @@ const ProductDetails = ({ product }) => {
                     className="hidden"
                   />
                   <label
-                    for={`size-${size}`}
+                    htmlFor={`size-${size}`}
                     className="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600 dark:text-gray-300 dark:border-gray-500 "
                   >
                     {size}
                   </label>
                 </div>
                 {/* <RadioGroupItem value={size} id={`option-${i}`} />
-                <Label htmlFor={`option-${i}`}>{size}</Label> */}
+                <Label htmlhtmlFor={`option-${i}`}>{size}</Label> */}
               </div>
             ))}
           </RadioGroup>

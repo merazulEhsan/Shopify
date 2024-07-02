@@ -20,7 +20,7 @@ const SubTotalCard = ({ calculateTotal }) => {
               id="r1"
               className="text-secondary border-secondary"
             />
-            <Label htmlFor="r1">Inside Tangail</Label>
+            <Label htmlhtmlFor="r1">Inside Tangail</Label>
           </div>
 
           <div className="flex items-center space-x-2 dark:text-gray-400">
@@ -29,7 +29,7 @@ const SubTotalCard = ({ calculateTotal }) => {
               id="r3"
               className="text-secondary border-secondary"
             />
-            <Label htmlFor="r3">Outside Tangail</Label>
+            <Label htmlhtmlFor="r3">Outside Tangail</Label>
           </div>
           <div className="flex items-center space-x-2 dark:text-gray-400">
             <RadioGroupItem
@@ -37,7 +37,7 @@ const SubTotalCard = ({ calculateTotal }) => {
               id="r4"
               className="text-secondary border-secondary"
             />
-            <Label htmlFor="r4">Free Shipping</Label>
+            <Label htmlhtmlFor="r4">Free Shipping</Label>
           </div>
         </RadioGroup>
       </div>

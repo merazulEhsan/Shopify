@@ -25,9 +25,9 @@ const ProductCard = async ({ product }) => {
   const stars = new Array(rating).fill(0);
 
   return (
-    <div className="dark:bg-gray-900 rounded-md group hover:shadow p-4">
+    <div className="dark:bg-cardBlack rounded-md group hover:shadow p-4">
       <div className="relative overflow-hidden ">
-        <div className="h-60 lg:w-60 dark:bg-gray-900 mx-auto overflow-clip rounded-md">
+        <div className="h-60 lg:w-60 dark:bg-cardBlack mx-auto overflow-clip rounded-md">
           <Image
             width={500}
             height={500}

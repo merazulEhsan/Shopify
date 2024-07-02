@@ -26,7 +26,7 @@ const ShopPage = async () => {
                     className="text-primary focus:ring-0 rounded-sm cursor-pointer"
                   />
                   <label
-                    for="cat-1"
+                    htmlFor="cat-1"
                     className="text-gray-600 dark:text-gray-300  ml-3 cusror-pointer"
                   >
                     Accessories
@@ -43,7 +43,7 @@ const ShopPage = async () => {
                     className="text-primary focus:ring-0 rounded-sm cursor-pointer"
                   />
                   <label
-                    for="cat-2"
+                    htmlFor="cat-2"
                     className="text-gray-600 dark:text-gray-300 ml-3 cusror-pointer"
                   >
                     T-shirt
@@ -60,7 +60,7 @@ const ShopPage = async () => {
                     className="text-primary focus:ring-0 rounded-sm cursor-pointer"
                   />
                   <label
-                    for="cat-3"
+                    htmlFor="cat-3"
                     className="text-gray-600 dark:text-gray-300 ml-3 cusror-pointer"
                   >
                     Shoe
@@ -77,7 +77,7 @@ const ShopPage = async () => {
                     className="text-primary focus:ring-0 rounded-sm cursor-pointer"
                   />
                   <label
-                    for="cat-4"
+                    htmlFor="cat-4"
                     className="text-gray-600 dark:text-gray-300 ml-3 cusror-pointer"
                   >
                     Slipers & Sandels
@@ -125,7 +125,7 @@ const ShopPage = async () => {
                     className="hidden"
                   />
                   <label
-                    for="size-xs"
+                    htmlFor="size-xs"
                     className="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600 dark:text-gray-300"
                   >
                     XS
@@ -139,7 +139,7 @@ const ShopPage = async () => {
                     className="hidden"
                   />
                   <label
-                    for="size-sm"
+                    htmlFor="size-sm"
                     className="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600 dark:text-gray-300"
                   >
                     S
@@ -153,7 +153,7 @@ const ShopPage = async () => {
                     className="hidden"
                   />
                   <label
-                    for="size-m"
+                    htmlFor="size-m"
                     className="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600 dark:text-gray-300"
                   >
                     M
@@ -167,7 +167,7 @@ const ShopPage = async () => {
                     className="hidden"
                   />
                   <label
-                    for="size-l"
+                    htmlFor="size-l"
                     className="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600 dark:text-gray-300"
                   >
                     L
@@ -181,7 +181,7 @@ const ShopPage = async () => {
                     className="hidden"
                   />
                   <label
-                    for="size-xl"
+                    htmlFor="size-xl"
                     className="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600 dark:text-gray-300"
                   >
                     XL
@@ -207,10 +207,10 @@ const ShopPage = async () => {
           <div className=" flex justify-between">
             <div className="space-x-2 mb-10 flex items-center cursor-pointer">
               <span className="border border-gray-300 p-1.5">
-                <LayoutGrid className="text-gray-500" />
+                <LayoutGrid className="text-gray-500 dark:text-gray-300" />
               </span>
               <span className="border border-gray-300 p-1.5">
-                <LayoutList className="text-gray-500" />
+                <LayoutList className="text-gray-500 dark:text-gray-300" />
               </span>
 
               <span className="text-gray-600 dark:text-gray-300 pl-4">
