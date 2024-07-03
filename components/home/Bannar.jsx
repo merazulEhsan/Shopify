@@ -36,7 +36,7 @@ const Bannar = () => {
       <CarouselContent>
         {banner.map((ban, index) => (
           <CarouselItem key={index}>
-            <div className="flex h-[520px] items-center justify-center">
+            <div className="flex h-[530px] items-center justify-center">
               <Image
                 className="w-full h-full object-fill"
                 width={500}

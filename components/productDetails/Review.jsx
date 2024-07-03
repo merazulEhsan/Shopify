@@ -1,6 +1,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ClickableRatingStars from "./ClickableRatingStars";
 import ReviewForm from "./ReviewForm";
 
 const Review = () => {
@@ -70,15 +71,9 @@ const Review = () => {
             Your email address will not be published. Required fields are marked
             *
           </p>
-          <div className="text-left text-sm text-gray-600 dark:text-gray-400 ">
-            <span>Your Rating: </span>
-            <span className="text-gray-300 space-x-1 text-xs">
-              <FontAwesomeIcon icon={faStar} />
-              <FontAwesomeIcon icon={faStar} />
-              <FontAwesomeIcon icon={faStar} />
-              <FontAwesomeIcon icon={faStar} />
-              <FontAwesomeIcon icon={faStar} />
-            </span>
+          <div className="text-left text-sm text-gray-600 dark:text-gray-400 flex items-center">
+            <span className="mr-1">Your Rating: </span>
+            <ClickableRatingStars />
           </div>
           <ReviewForm />
         </div>

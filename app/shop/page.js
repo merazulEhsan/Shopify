@@ -1,5 +1,6 @@
 import BreadCrumb from "@/components/BreadCrumb";
 import ProductCard from "@/components/ProductCard";
+import SortButton from "@/components/customeUi/SortButton";
 import { getAllProducts } from "@/data/queries";
 import { LayoutGrid, LayoutList } from "lucide-react";
 
@@ -218,12 +219,7 @@ const ShopPage = async () => {
               </span>
             </div>
             <div>
-              <button
-                className="bg-gray-100 text-black rounded border border-gray-300  px-8 py-1.5 font-medium 
-                     hover:bg-transparent hover:text-black transition ease-linear duration-400"
-              >
-                Sorting
-              </button>
+              <SortButton />
             </div>
           </div>
           <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4 ">

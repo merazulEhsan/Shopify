@@ -4,8 +4,8 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import { toast } from "sonner";
+import CartModal from "./customeUi/CartModal";
 import { Dialog, DialogTrigger } from "./ui/dialog";
-import CartModal from "./uiBttons/CartModal";
 
 const WishlistCard = ({ wishlist, userId }) => {
   const handleRemove = async (pId, uId) => {

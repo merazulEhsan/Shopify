@@ -1,13 +1,12 @@
 import { useAuth } from "@/app/hooks/useAuth";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Eye } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import CartButton from "./customeUi/CartButton";
+import CartModal from "./customeUi/CartModal";
+import WishlistButton from "./customeUi/WishlistButton";
+import RatingStars from "./productDetails/RatingStars";
 import { Dialog, DialogTrigger } from "./ui/dialog";
-import CartButton from "./uiBttons/CartButton";
-import CartModal from "./uiBttons/CartModal";
-import WishlistButton from "./uiBttons/WishlistButton";
 
 const ProductCard = async ({ product }) => {
   const { userId, session } = await useAuth();
@@ -22,7 +21,6 @@ const ProductCard = async ({ product }) => {
     price,
     discountPrice,
   } = product || {};
-  const stars = new Array(rating).fill(0);
 
   return (
     <div className="dark:bg-cardBlack rounded-md group hover:shadow p-4">
@@ -67,11 +65,7 @@ const ProductCard = async ({ product }) => {
         </Link>
         <div className="flex items-center">
           <div className="flex gap-1 text-xs text-gray-300">
-            {stars.map((star, index) => (
-              <span key={index} className="text-yellow-400">
-                <FontAwesomeIcon icon={faStar} />
-              </span>
-            ))}
+            <RatingStars rating={rating} />
           </div>
           <div className="text-xs text-gray-500 dark:text-gray-300 ml-3">
             (150) Reviews

@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const BreadCrumb = ({ value }) => {
   return (
-    <div className=" bg-ghostWhite dark:bg-customBlack mb-6">
+    <div className=" bg-ghostWhite dark:bg-customBlack ">
       <div className="container py-10 flex justify-between items-center">
         <h1 className="text-3xl text-black dark:text-gray-300 font-roboto font-semibold">
           {value}

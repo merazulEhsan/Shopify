@@ -156,7 +156,7 @@ export default function Login() {
             <div className="flex items-center space-x-2">
               <Checkbox id="terms" />
               <label
-                htmlhtmlFor="terms"
+                htmlFor="terms"
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
               >
                 Remember Me

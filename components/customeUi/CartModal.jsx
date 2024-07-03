@@ -8,7 +8,7 @@ import ProductDetails from "../productDetails/ProductDetails";
 
 const CartModal = ({ product }) => {
   return (
-    <DialogContent className="bg-white overflow-auto min-w-3xl h-5/6 ">
+    <DialogContent className="bg-white dark:bg-customBlack border-none overflow-auto min-w-3xl h-5/6 ">
       <DialogHeader>
         <DialogTitle />
         <DialogDescription>

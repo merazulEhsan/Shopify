@@ -6,7 +6,7 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { faCircleCheck, faHeart } from "@fortawesome/free-regular-svg-icons";
-import { faCartArrowDown, faStar } from "@fortawesome/free-solid-svg-icons";
+import { faCartArrowDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
@@ -15,6 +15,7 @@ import { useCart } from "@/app/hooks/useCart";
 import { useState } from "react";
 import QuantityButton from "../cart/QuantityButton";
 import { RadioGroup } from "../ui/radio-group";
+import RatingStars from "./RatingStars";
 
 const ProductDetails = ({ product }) => {
   const {
@@ -33,10 +34,10 @@ const ProductDetails = ({ product }) => {
     quantity,
   } = product || {};
 
-  const stars = new Array(rating).fill(0);
   const { addToCart } = useCart();
 
   const [selectSize, setSelectSize] = useState(null);
+  const [thumb, setThumb] = useState(thumbnail);
 
   return (
     <div className="container grid md:grid-cols-2 gap-6">
@@ -44,7 +45,7 @@ const ProductDetails = ({ product }) => {
         <Image
           width={500}
           height={500}
-          src={thumbnail}
+          src={thumb}
           alt="product"
           className="object-contain"
         />
@@ -57,6 +58,7 @@ const ProductDetails = ({ product }) => {
               src={image}
               alt={title}
               className="w-full cursor-pointer border border-gray-300"
+              onClick={() => setThumb(image)}
             />
           ))}
         </div>
@@ -66,11 +68,7 @@ const ProductDetails = ({ product }) => {
         <h2 className="text-2xl font-medium uppercase mb-2">{title}</h2>
         <div className="flex items-center mb-4">
           <div className="flex gap-1 text-sm text-gray-300">
-            {stars.map((star, index) => (
-              <span key={index} className="text-yellow-400">
-                <FontAwesomeIcon icon={faStar} />
-              </span>
-            ))}
+            <RatingStars rating={rating} />
           </div>
           <div className="text-xs text-gray-500 ml-3 dark:text-gray-300 ">
             (150 Reviews)
@@ -142,7 +140,7 @@ const ProductDetails = ({ product }) => {
                   </label>
                 </div>
                 {/* <RadioGroupItem value={size} id={`option-${i}`} />
-                <Label htmlhtmlFor={`option-${i}`}>{size}</Label> */}
+                <Label htmlFor={`option-${i}`}>{size}</Label> */}
               </div>
             ))}
           </RadioGroup>

@@ -1,167 +1,95 @@
 import BreadCrumb from "@/components/BreadCrumb";
+import BillingModal from "@/components/customeUi/BillingModal";
+import { Dialog, DialogTrigger } from "@/components/ui/dialog";
+
+import { Edit } from "lucide-react";
 
 const CheckoutPage = () => {
   return (
-    <div className="bg-ghostWhite">
+    <div className="bg-ghostWhite dark:bg-customBlack">
       <BreadCrumb value="Check Out" />
       <div class="container grid grid-cols-12 items-start pb-16 gap-6 ">
-        <div class="md:col-span-8 col-span-full p-8 shadow rounded bg-white">
-          <h3 class="text-lg font-medium capitalize mb-4">Billing Details</h3>
-          <div class="space-y-4">
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <label htmlFor="first-name" class="text-gray-600">
-                  First Name <span class="text-primary">*</span>
-                </label>
-                <input
-                  type="text"
-                  name="first-name"
-                  id="first-name"
-                  class="input-box"
-                />
-              </div>
-              <div>
-                <label htmlFor="last-name" class="text-gray-600">
-                  Last Name <span class="text-primary">*</span>
-                </label>
-                <input
-                  type="text"
-                  name="last-name"
-                  id="last-name"
-                  class="input-box"
-                />
-              </div>
+        <div class="md:col-span-8 col-span-full p-8 shadow rounded bg-white dark:bg-cardBlack">
+          <h3 class="text-lg font-medium capitalize mb-4 border-b border-gray-300 pb-2">
+            Billing Details
+          </h3>
+
+          <div className="text-sm tracking-normal ">
+            <div className="flex items-center justify-between">
+              <p>Deliver to : Mr. John Doe</p>
+              <Dialog>
+                <DialogTrigger className="sm:col-span-2 p-1 text-center text-sm text-white bg-black border border-black rounded uppercase font-roboto font-medium hover:bg-white hover:text-black transition ease-linear duration-300 dark:bg-primary dark:hover:bg-white ">
+                  <Edit size="16" />
+                </DialogTrigger>
+                <BillingModal />
+              </Dialog>
             </div>
-            <div>
-              <label htmlFor="company" class="text-gray-600">
-                Company
-              </label>
-              <input
-                type="text"
-                name="company"
-                id="company"
-                class="input-box"
-              />
-            </div>
-            <div>
-              <label htmlFor="region" class="text-gray-600">
-                Country/Region
-              </label>
-              <input type="text" name="region" id="region" class="input-box" />
-            </div>
-            <div>
-              <label htmlFor="address" class="text-gray-600">
-                Street address
-              </label>
-              <input
-                type="text"
-                name="address"
-                id="address"
-                class="input-box"
-              />
-            </div>
-            <div>
-              <label htmlFor="city" class="text-gray-600">
-                City
-              </label>
-              <input type="text" name="city" id="city" class="input-box" />
-            </div>
-            <div>
-              <label htmlFor="phone" class="text-gray-600">
-                Phone number
-              </label>
-              <input type="text" name="phone" id="phone" class="input-box" />
-            </div>
-            <div>
-              <label htmlFor="email" class="text-gray-600">
-                Email address
-              </label>
-              <input type="email" name="email" id="email" class="input-box" />
-            </div>
-            <div>
-              <label htmlFor="company" class="text-gray-600">
-                Company
-              </label>
-              <input
-                type="text"
-                name="company"
-                id="company"
-                class="input-box"
-              />
-            </div>
+            <p>(+880) 1777093703</p>
+            <p>Karatia Bazar, Tangail Sadar Karatia, Tangail - Town, Dhaka</p>
+            <p>Email to john@gmail.com</p>
           </div>
         </div>
 
-        <div class="md:col-span-4 col-span-full shadow p-6 rounded bg-white">
-          <h4 class="text-gray-800 text-lg mb-4 font-medium uppercase">
+        <div class="md:col-span-4 col-span-full shadow p-6 rounded bg-white dark:bg-cardBlack">
+          <h4 class="text-gray-800 dark:text-gray-300 text-lg mb-4 font-medium uppercase border-b border-gray-200 pb-2">
             order summary
           </h4>
           <div class="space-y-2">
             <div class="flex justify-between">
               <div>
-                <h5 class="text-gray-800 font-medium">Italian shape sofa</h5>
-                <p class="text-sm text-gray-600">Size: M</p>
+                <h5 class="text-gray-800 dark:text-gray-300 font-medium">
+                  Italian shape sofa
+                </h5>
+                <p class="text-sm text-gray-600 dark:text-gray-500">Size: M</p>
               </div>
-              <p class="text-gray-600">x3</p>
-              <p class="text-gray-800 font-medium">$320</p>
+              <p class="text-gray-600 dark:text-gray-500">x3</p>
+              <p class="text-gray-800 dark:text-gray-300 font-medium">$320</p>
             </div>
             <div class="flex justify-between">
               <div>
-                <h5 class="text-gray-800 font-medium">Italian shape sofa</h5>
-                <p class="text-sm text-gray-600">Size: M</p>
+                <h5 class="text-gray-800 dark:text-gray-300 font-medium">
+                  Italian shape sofa
+                </h5>
+                <p class="text-sm text-gray-600 dark:text-gray-500">Size: M</p>
               </div>
-              <p class="text-gray-600">x3</p>
-              <p class="text-gray-800 font-medium">$320</p>
+              <p class="text-gray-600 dark:text-gray-500">x3</p>
+              <p class="text-gray-800 dark:text-gray-300 font-medium">$320</p>
             </div>
             <div class="flex justify-between">
               <div>
-                <h5 class="text-gray-800 font-medium">Italian shape sofa</h5>
-                <p class="text-sm text-gray-600">Size: M</p>
+                <h5 class="text-gray-800 dark:text-gray-300 font-medium">
+                  Italian shape sofa
+                </h5>
+                <p class="text-sm text-gray-600 dark:text-gray-500">Size: M</p>
               </div>
-              <p class="text-gray-600">x3</p>
-              <p class="text-gray-800 font-medium">$320</p>
+              <p class="text-gray-600 dark:text-gray-500">x3</p>
+              <p class="text-gray-800 dark:text-gray-300 font-medium">$320</p>
             </div>
             <div class="flex justify-between">
               <div>
-                <h5 class="text-gray-800 font-medium">Italian shape sofa</h5>
-                <p class="text-sm text-gray-600">Size: M</p>
+                <h5 class="text-gray-800 dark:text-gray-300 font-medium">
+                  Italian shape sofa
+                </h5>
+                <p class="text-sm text-gray-600 dark:text-gray-500">Size: M</p>
               </div>
-              <p class="text-gray-600">x3</p>
-              <p class="text-gray-800 font-medium">$320</p>
+              <p class="text-gray-600 dark:text-gray-500">x3</p>
+              <p class="text-gray-800 dark:text-gray-300 font-medium">$320</p>
             </div>
           </div>
 
-          <div class="flex justify-between border-b border-gray-200 mt-1 text-gray-800 font-medium py-3 uppercas">
+          <div class="flex justify-between border-b border-gray-200 mt-1 text-gray-800 dark:text-gray-300 font-medium py-3 uppercas">
             <p>subtotal</p>
             <p>$1280</p>
           </div>
 
-          <div class="flex justify-between border-b border-gray-200 mt-1 text-gray-800 font-medium py-3 uppercas">
+          <div class="flex justify-between border-b border-gray-200 mt-1 text-gray-800 dark:text-gray-300 font-medium py-3 uppercas">
             <p>shipping</p>
             <p>Free</p>
           </div>
 
-          <div class="flex justify-between text-gray-800 font-medium py-3 uppercas">
+          <div class="flex justify-between text-gray-800 dark:text-gray-300 font-medium py-3 uppercas">
             <p class="font-semibold">Total</p>
             <p>$1280</p>
-          </div>
-
-          <div class="flex items-center mb-4 mt-2">
-            <input
-              type="checkbox"
-              name="aggrement"
-              id="aggrement/"
-              class="text-primary focus:ring-0 rounded-sm cursor-pointer w-3 h-3"
-            />
-            <label
-              htmlFor="aggrement"
-              class="text-gray-600 ml-3 cursor-pointer text-sm"
-            >
-              I agree to the{" "}
-              <a href="#" class="text-primary">
-                terms & conditions
-              </a>
-            </label>
           </div>
 
           <a

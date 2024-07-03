@@ -9,7 +9,7 @@ const Navbar = async () => {
   const session = await auth();
 
   return (
-    <nav className=" md:block hidden border-t border-gray-300 dark:border-gray-700 shadow-2xl dark:bg-cardBlack">
+    <nav className=" md:block hidden border-t border-gray-300 dark:border-gray-700 shadow dark:bg-cardBlack">
       <div className="container flex ">
         <div className="px-16 bg-secondary hover:bg-black flex items-center cursor-pointer relative group transition ease-linear duration-300">
           <span className="text-white">
