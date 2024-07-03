@@ -106,7 +106,12 @@ const BillingModal = () => {
         </DialogDescription>
       </DialogHeader>
       <DialogFooter>
-        <Button type="submit">Save changes</Button>
+        <Button
+          className="px-4 text-white bg-black border border-black rounded hover:bg-white hover:text-black transition ease-linear duration-300 dark:bg-primary dark:hover:bg-white "
+          type="submit"
+        >
+          Save changes
+        </Button>
       </DialogFooter>
     </DialogContent>
   );

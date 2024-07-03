@@ -18,7 +18,7 @@ const CheckoutPage = () => {
             <div className="flex items-center justify-between">
               <p>Deliver to : Mr. John Doe</p>
               <Dialog>
-                <DialogTrigger className="sm:col-span-2 p-1 text-center text-sm text-white bg-black border border-black rounded uppercase font-roboto font-medium hover:bg-white hover:text-black transition ease-linear duration-300 dark:bg-primary dark:hover:bg-white ">
+                <DialogTrigger className="p-1 text-white bg-black border border-black rounded hover:bg-white hover:text-black transition ease-linear duration-300 dark:bg-primary dark:hover:bg-white ">
                   <Edit size="16" />
                 </DialogTrigger>
                 <BillingModal />
@@ -92,12 +92,9 @@ const CheckoutPage = () => {
             <p>$1280</p>
           </div>
 
-          <a
-            href="#"
-            class="block w-full py-3 px-4 text-center text-white bg-primary border border-primary rounded-md hover:bg-transparent hover:text-primary transition font-medium"
-          >
+          <button class="px-10 py-3 text-center text-sm text-white bg-black border border-black rounded uppercase font-roboto font-medium hover:bg-white hover:text-black transition ease-linear duration-300 dark:bg-primary dark:hover:bg-white w-full">
             Place order
-          </a>
+          </button>
         </div>
       </div>
     </div>
