@@ -1,5 +1,5 @@
 import { getAllProducts } from "@/data/queries";
-import ProductCard from "../ProductCard";
+import ProductCard from "../../../components/ProductCard";
 
 const RelatedProduct = async () => {
   const allProducts = await getAllProducts();

@@ -13,8 +13,8 @@ import Link from "next/link";
 
 import { useCart } from "@/app/hooks/useCart";
 import { useState } from "react";
-import QuantityButton from "../cart/QuantityButton";
-import { RadioGroup } from "../ui/radio-group";
+import { RadioGroup } from "../../../components/ui/radio-group";
+import QuantityButton from "../../cart/_components/QuantityButton";
 import RatingStars from "./RatingStars";
 
 const ProductDetails = ({ product }) => {

@@ -6,7 +6,7 @@ const BreadCrumb = ({ value }) => {
   return (
     <div className=" bg-ghostWhite dark:bg-customBlack ">
       <div className="container py-10 flex justify-between items-center">
-        <h1 className="text-3xl text-black dark:text-gray-300 font-roboto font-semibold">
+        <h1 className="text-3xl text-black dark:text-gray-300 font-roboto font-medium">
           {value}
         </h1>
         <div className="flex justify-between items-center gap-3 text-sm">

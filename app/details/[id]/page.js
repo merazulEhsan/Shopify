@@ -1,8 +1,8 @@
+import ProductDescription from "@/app/details/_components/ProductDescription";
+import ProductDetails from "@/app/details/_components/ProductDetails";
+import RelatedProduct from "@/app/details/_components/RelatedProduct";
+import Review from "@/app/details/_components/Review";
 import BreadCrumb from "@/components/BreadCrumb";
-import ProductDescription from "@/components/productDetails/ProductDescription";
-import ProductDetails from "@/components/productDetails/ProductDetails";
-import RelatedProduct from "@/components/productDetails/RelatedProduct";
-import Review from "@/components/productDetails/Review";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { getProductById } from "@/data/queries";
 

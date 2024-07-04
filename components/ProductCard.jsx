@@ -2,10 +2,10 @@ import { useAuth } from "@/app/hooks/useAuth";
 import { Eye } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import RatingStars from "../app/details/_components/RatingStars";
 import CartButton from "./customeUi/CartButton";
 import CartModal from "./customeUi/CartModal";
 import WishlistButton from "./customeUi/WishlistButton";
-import RatingStars from "./productDetails/RatingStars";
 import { Dialog, DialogTrigger } from "./ui/dialog";
 
 const ProductCard = async ({ product }) => {

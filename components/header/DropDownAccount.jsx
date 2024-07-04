@@ -36,7 +36,7 @@ const DropDownAccount = ({ user }) => {
         <DropdownMenuLabel>My Account</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <Link href="/profile">
+          <Link href="/account">
             <DropdownMenuItem className="dark:hover:text-customBlack">
               <User className="mr-2 h-4 w-4" />
               <span>Profile</span>

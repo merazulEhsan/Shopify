@@ -1,5 +1,5 @@
+import CartTable from "@/app/cart/_components/CartTable";
 import BreadCrumb from "@/components/BreadCrumb";
-import CartTable from "@/components/cart/CartTable";
 import { redirect } from "next/navigation";
 import { useAuth } from "../hooks/useAuth";
 
