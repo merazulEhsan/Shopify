@@ -1,5 +1,5 @@
 "use client";
-import { useCart } from "@/app/hooks/useCart";
+import { useCart } from "@/app/(home)/hooks/useCart";
 import {
   Sheet,
   SheetClose,
@@ -52,7 +52,7 @@ const Header = ({ wishlist }) => {
               <FontAwesomeIcon icon={faHeart} />
             </div>
             <div className="text-xs leading-3">Wishlist</div>
-            <div className="absolute right-0 -top-1 w-4 h-4 rounded-full flex items-center justify-center bg-primary text-white text-xs border-2 border-white p-2 ">
+            <div className="absolute right-0 -top-1 w-4 h-4 rounded-full flex items-center justify-center bg-primary text-white text-xs">
               {wishlist ? wishlist?.length : 0}
             </div>
           </Link>
@@ -64,7 +64,7 @@ const Header = ({ wishlist }) => {
               <FontAwesomeIcon icon={faCartArrowDown} />
             </div>
             <div className="text-xs leading-3">Cart</div>
-            <div className="absolute -right-3 -top-1 w-4 h-4 rounded-full flex items-center justify-center bg-primary text-white text-xs border-2 border-white p-2">
+            <div className="absolute -right-3 -top-1 w-4 h-4 rounded-full flex items-center justify-center bg-primary text-white text-xs ">
               {cartItems.length}
             </div>
           </Link>

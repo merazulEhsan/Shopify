@@ -4,7 +4,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import ProductDetails from "../../app/details/_components/ProductDetails";
+import ProductDetails from "../../app/(home)/details/_components/ProductDetails";
 
 const CartModal = ({ product }) => {
   return (

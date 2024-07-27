@@ -1,5 +1,5 @@
 "use client";
-import { addToWishlist } from "@/app/actions";
+import { addToWishlist } from "@/app/(home)/actions";
 import { Heart } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";

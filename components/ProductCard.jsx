@@ -1,8 +1,8 @@
-import { useAuth } from "@/app/hooks/useAuth";
+import { useAuth } from "@/app/(home)/hooks/useAuth";
 import { Eye } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import RatingStars from "../app/details/_components/RatingStars";
+import RatingStars from "../app/(home)/details/_components/RatingStars";
 import CartButton from "./customeUi/CartButton";
 import CartModal from "./customeUi/CartModal";
 import WishlistButton from "./customeUi/WishlistButton";

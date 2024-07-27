@@ -1,4 +1,4 @@
-import { Heart, Keyboard, ShoppingCart, User } from "lucide-react";
+import { Heart, LayoutDashboard, ShoppingCart, User } from "lucide-react";
 
 import {
   DropdownMenu,
@@ -54,10 +54,12 @@ const DropDownAccount = ({ user }) => {
               <span>Wishlist</span>
             </DropdownMenuItem>
           </Link>
-          <DropdownMenuItem className="dark:hover:text-customBlack">
-            <Keyboard className="mr-2 h-4 w-4" />
-            <span>Keyboard shortcuts</span>
-          </DropdownMenuItem>
+          <Link href="/admin">
+            <DropdownMenuItem className="dark:hover:text-customBlack">
+              <LayoutDashboard className="mr-2 h-4 w-4" />
+              <span>Admin Panel</span>
+            </DropdownMenuItem>
+          </Link>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
 

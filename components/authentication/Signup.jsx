@@ -203,17 +203,7 @@ export default function Signup() {
               </FormItem>
             )}
           />
-          {/* <div className="py-1">
-              <div className="flex items-center space-x-2">
-                <Checkbox onClick={() => setIsCheck(!isCheck)} id="terms" />
-                <label
-                  htmlFor="terms"
-                  className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                >
-                  I accept the terms of the Service & Privacy Policy.
-                </label>
-              </div>
-            </div> */}
+
           {error && <p className="text-sm text-primary">{error}</p>}
           <Button
             className="bg-black text-white hover:bg-white hover:text-black border border-black transition ease-in-out duration-300 uppercase"

@@ -1,4 +1,5 @@
-import { auth } from "@/auth";
+import { useAuth } from "@/app/(home)/hooks/useAuth";
+import { getUserInfo } from "@/queries/account";
 import { faBarsStaggered } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { LogIn } from "lucide-react";
@@ -6,7 +7,9 @@ import Link from "next/link";
 import DropDownAccount from "./DropDownAccount";
 
 const Navbar = async () => {
-  const session = await auth();
+  const { userId, session } = await useAuth();
+
+  const userInfo = await getUserInfo(userId);
 
   return (
     <nav className=" md:block hidden border-t border-gray-300 dark:border-gray-700 shadow dark:bg-cardBlack">
@@ -121,7 +124,7 @@ const Navbar = async () => {
           </div>
           {session?.user ? (
             <div className="  flex items-center gap-4">
-              <DropDownAccount user={session?.user} />
+              <DropDownAccount user={userInfo} />
             </div>
           ) : (
             <Link
