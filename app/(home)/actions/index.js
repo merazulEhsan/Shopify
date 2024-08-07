@@ -6,6 +6,7 @@ import {
   updateBillingAddress,
   updateProfileDetails,
 } from "@/queries/account";
+import { createOrder } from "@/queries/orders";
 import { revalidatePath } from "next/cache";
 
 export async function login(formData) {
@@ -56,9 +57,19 @@ export async function creatingAddress(id, data) {
   revalidatePath("/account");
 }
 
-export async function updatebillingInfo(uId, addressId, updateData) {
+export async function updatebillingInfo(uId, updateData) {
+  console.log(uId);
   try {
-    await updateBillingAddress(uId, addressId, updateData);
+    await updateBillingAddress(uId, updateData);
+  } catch (error) {
+    throw new Error(error);
+  }
+  revalidatePath("/account");
+}
+
+export async function placeOrder(orderSubInfo, data, order) {
+  try {
+    await createOrder(orderSubInfo, data, order);
   } catch (error) {
     throw new Error(error);
   }

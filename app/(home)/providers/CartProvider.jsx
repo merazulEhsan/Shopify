@@ -14,15 +14,13 @@ export const CartProvider = ({ children }) => {
     }
   }, []);
 
-  const addToCart = (item, size) => {
+  const addToCart = (item) => {
     const updatedCart = [...cartItems];
     const existingItem = updatedCart.find(
       (cartItem) => cartItem.id === item.id
     );
     if (existingItem) {
       existingItem.quantity += item.quantity;
-      existingItem.size = size;
-
       toast.info("Item already exists in your cart!");
     } else {
       updatedCart.push(item);
@@ -63,11 +61,16 @@ export const CartProvider = ({ children }) => {
 
   const calculateTotal = () => {
     return cartItems?.reduce((total, item) => {
-      return total + item.quantity * item.price;
+      return total + item.quantity * item.discountPrice;
     }, 0);
   };
 
   const subtotal = calculateTotal() + parseInt(shipping);
+
+  const clearCart = () => {
+    setCartItems([]);
+    localStorage.clear();
+  };
   return (
     <CartContext.Provider
       value={{
@@ -81,6 +84,7 @@ export const CartProvider = ({ children }) => {
         shipping,
         setShipping,
         subtotal,
+        clearCart,
       }}
     >
       {children}

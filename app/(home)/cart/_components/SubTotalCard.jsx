@@ -7,7 +7,7 @@ import {
 
 const SubTotalCard = ({ calculateTotal, shipping, setShipping, subtotal }) => {
   return (
-    <div className="md:col-span-3 col-span-12 p-4 rounded shadow-xl dark:bg-gray-800">
+    <div className="md:col-span-3 col-span-12 p-4 rounded shadow-xl dark:bg-cardBlack">
       <div className="flex justify-between border-b border-gray-300 text-gray-800 font-semibold py-3 text-base dark:text-gray-400">
         <p>Subtotal</p>
         <p>${calculateTotal()}</p>

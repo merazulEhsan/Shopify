@@ -9,7 +9,7 @@ function Layout({ tabs }) {
         <BreadCrumb value="Profile" />
         <div className="container lg:flex mt-4">
           <Sidebar />
-          <div className="lg:w-3/4 md:pl-8 mt-[30px] lg:mt-0  rounded">
+          <div className="lg:w-3/4 lg:pl-6 mt-[30px] lg:mt-0  rounded">
             {tabs}
           </div>
         </div>

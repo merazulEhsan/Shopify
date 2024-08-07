@@ -96,7 +96,7 @@ const Navbar = async () => {
         </div>
 
         <div className="flex items-center justify-between flex-grow md:pl-12 py-1.5 text-base font-medium  ">
-          <div className="flex items-center space-x-2 capitalize ">
+          <div className="flex items-center  capitalize ">
             <Link
               href="/"
               className="text-gray-800 dark:text-white hover:text-secondary dark:hover:text-secondary rounded px-3 py-2 transition"

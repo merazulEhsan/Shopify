@@ -18,42 +18,32 @@ const userSchema = new Schema({
     type: Number,
   },
 
-  address: [
-    {
-      name: {
-        required: false,
-        type: String,
-      },
-      mobile: {
-        required: false,
-        type: Number,
-      },
-      area: {
-        required: false,
-        type: String,
-      },
-      division: {
-        required: false,
-        type: String,
-      },
-      district: {
-        required: false,
-        type: String,
-      },
-      thana: {
-        required: false,
-        type: String,
-      },
-      detailAddress: {
-        required: false,
-        type: String,
-      },
-      addressType: {
-        required: false,
-        type: Boolean,
-      },
+  address: {
+    name: {
+      type: String,
     },
-  ],
+    mobile: {
+      type: Number,
+    },
+    email: {
+      type: String,
+    },
+    area: {
+      type: String,
+    },
+    division: {
+      type: String,
+    },
+    district: {
+      type: String,
+    },
+    thana: {
+      type: String,
+    },
+    address: {
+      type: String,
+    },
+  },
 
   profilepic: {
     required: false,

@@ -38,10 +38,28 @@ const ProductDetails = ({ product }) => {
 
   const [selectSize, setSelectSize] = useState(null);
   const [thumb, setThumb] = useState(thumbnail);
-  console.log(selectSize);
+
+  const handleAddToCart = () => {
+    const addItem = {
+      title,
+      thumbnail,
+      description,
+      rating,
+      image,
+      category,
+      sku,
+      price,
+      discountPrice,
+      brand,
+      size: selectSize,
+      id,
+      quantity,
+    };
+    addToCart(addItem);
+  };
 
   return (
-    <div className="container grid md:grid-cols-2 gap-6">
+    <div className="container grid md:grid-cols-2 gap-6 mt-4">
       <div className="">
         <Image
           width={500}
@@ -67,7 +85,10 @@ const ProductDetails = ({ product }) => {
 
       <div className="text-left">
         <h2 className="text-2xl font-medium uppercase mb-2">{title}</h2>
-        <div className="flex items-center mb-4">
+        <div className="flex items-center mb-4 space-x-2">
+          <span className="text-blue-600 text-sm bg-blue-50 px-2 rounded-sm">
+            In-Stock
+          </span>
           <div className="flex gap-1 text-sm text-gray-300">
             <RatingStars rating={rating} />
           </div>
@@ -76,10 +97,6 @@ const ProductDetails = ({ product }) => {
           </div>
         </div>
         <div className="space-y-2">
-          <p className="text-gray-800 dark:text-gray-500  font-semibold space-x-2">
-            <span>Availability: </span>
-            <span className="text-green-600">In Stock</span>
-          </p>
           <p className="space-x-2">
             <span className="text-gray-800 dark:text-gray-500  font-semibold">
               Brand:{" "}
@@ -147,7 +164,7 @@ const ProductDetails = ({ product }) => {
 
         <div className="mt-4 flex gap-3 border-b border-gray-200 pb-5 pt-5">
           <button
-            onClick={() => addToCart(product, selectSize)}
+            onClick={handleAddToCart}
             className="bg-primary border border-primary text-white px-8 py-2 font-medium rounded uppercase flex items-center gap-2 hover:bg-transparent hover:text-primary transition"
           >
             <FontAwesomeIcon icon={faCartArrowDown} /> Add to cart

@@ -1,6 +1,7 @@
 import BreadCrumb from "@/components/BreadCrumb";
 import ProductCard from "@/components/ProductCard";
 import SortButton from "@/components/customeUi/SortButton";
+import { Skeleton } from "@/components/ui/skeleton";
 import { getAllProducts } from "@/data/queries";
 import { LayoutGrid, LayoutList } from "lucide-react";
 
@@ -223,9 +224,19 @@ const ShopPage = async () => {
             </div>
           </div>
           <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4 ">
-            {allProducts?.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
+            {allProducts?.length === 0 ? (
+              <div className="flex flex-col space-y-3">
+                <Skeleton className="h-[125px] w-[250px] rounded-xl" />
+                <div className="space-y-2">
+                  <Skeleton className="h-4 w-[250px]" />
+                  <Skeleton className="h-4 w-[200px]" />
+                </div>
+              </div>
+            ) : (
+              allProducts?.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))
+            )}
           </div>
         </div>
       </div>

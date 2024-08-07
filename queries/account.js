@@ -1,4 +1,3 @@
-import { replaceMongoIdInArray } from "@/lib/data-utils";
 import { userModel } from "@/models/user-model";
 import { dbConnect } from "@/services/dbConnection";
 
@@ -16,11 +15,7 @@ async function updateProfileDetails(email, updateData) {
 
 async function createAddress(id, data) {
   await dbConnect();
-  const user = await userModel?.findById(id);
-  if (user) {
-    user?.address?.push(data);
-  }
-  user.save();
+  await userModel?.findByIdAndUpdate({ _id: id }, { address: data });
 }
 
 async function getAddress(id) {
@@ -28,14 +23,13 @@ async function getAddress(id) {
   const user = await userModel?.findById(id).lean();
   const address = user?.address;
 
-  return replaceMongoIdInArray(address);
+  return address;
 }
 
-async function updateBillingAddress(id, addressId, data) {
+async function updateBillingAddress(id, data) {
+  console.log(id);
   await dbConnect();
-  const user = await userModel?.findById(id).lean();
-  const update = await user?.findOneAndUpdate(id);
-  console.log(update);
+  await userModel?.findByIdAndUpdate({ _id: id }, { address: data });
 }
 
 export {

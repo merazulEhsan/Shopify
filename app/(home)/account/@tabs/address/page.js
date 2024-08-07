@@ -1,8 +1,8 @@
 import { useAuth } from "@/app/(home)/hooks/useAuth";
-import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import { getAddress } from "@/queries/account";
-import { Edit } from "lucide-react";
-import BillingModal from "../../_components/BillingModal";
+import { MapPin, MoveRight } from "lucide-react";
+import Link from "next/link";
+import AddressForm from "./_components/AddressForm";
 
 const AddressPage = async () => {
   const { userId } = await useAuth();
@@ -11,53 +11,67 @@ const AddressPage = async () => {
 
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-        {address?.map((address) => (
-          <div
-            key={address?._id}
-            className="p-6 shadow rounded bg-white text-slate-700 dark:bg-cardBlack dark:text-slate-300"
-          >
-            <h3 className="text-lg font-medium capitalize mb-4 border-b border-gray-300 pb-2">
-              Address Book
-              <span className="ml-2">
-                {address?.addressType === true && (
-                  <span className="text-xs px-2 py-1 bg-green-500 rounded text-white">
-                    Default
-                  </span>
-                )}
-              </span>
-            </h3>
-
-            <div className="text-sm tracking-normal ">
-              <div className="flex items-center justify-between">
-                <p className="font-semibold">{address?.name}</p>
-                <Dialog>
-                  <DialogTrigger className="p-1 text-white bg-black border border-black rounded hover:bg-white hover:text-black transition ease-linear duration-300 dark:bg-primary dark:hover:bg-white ">
-                    <Edit size="16" />
-                  </DialogTrigger>
-                  <BillingModal mode="edit" />
-                </Dialog>
-              </div>
-              <p>(+880) {address?.mobile}</p>
-              <p>
-                {address?.detailAddress}, {address?.area},
-              </p>
-              <p>
-                {address?.thana},{address?.district},{address?.division}
-              </p>
-            </div>
+      {!address ? (
+        <AddressForm mode="Add New" uId={userId} />
+      ) : (
+        <div className="">
+          <div className="flex items-center gap-3">
+            <MapPin color="gray" />
+            <h1 className="text-xl font-poppins font-semibold dark:text-slate-300">
+              Addresses
+            </h1>
           </div>
-        ))}
-      </div>
+          <p className="text-sm mb-4 text-gray-400">
+            The following addresses will be used on the checkout page by
+            default.
+          </p>
+          <div className="md:w-1/2 p-8 shadow rounded bg-white text-slate-700 dark:bg-cardBlack dark:text-slate-300">
+            <div className="">
+              <h1 className="text-lg font-medium mb-4 border-b border-gray-300 pb-2">
+                {address?.name}
+              </h1>
+            </div>
 
-      <div className="text-end">
-        <Dialog>
-          <DialogTrigger className="px-6 py-2 text-sm text-white bg-black border border-black rounded hover:bg-white hover:text-black transition ease-linear duration-300 dark:bg-primary dark:hover:bg-white mt-5">
-            Add New Address
-          </DialogTrigger>
-          <BillingModal mode="add" userId={userId} />
-        </Dialog>
-      </div>
+            <div className="text-sm tracking-normal font-poppins space-y-2">
+              <div className="grid grid-cols-12">
+                <span className="text-gray-400 col-span-4">Email:</span>
+                <span className="col-span-8"> {address?.email}</span>
+              </div>
+              <div className="grid grid-cols-12">
+                <span className="text-gray-400 col-span-4">Phone Number:</span>
+                <span className="col-span-8">(+880) {address?.mobile}</span>
+              </div>
+              <div className="grid grid-cols-12">
+                <span className="text-gray-400 col-span-4">Address:</span>
+                <span className="col-span-8">{address?.address}</span>
+              </div>
+              <div className="grid grid-cols-12">
+                <span className="text-gray-400 col-span-4">Area:</span>
+                <span className="col-span-8">{address?.area}</span>
+              </div>
+              <div className="grid grid-cols-12">
+                <span className="text-gray-400 col-span-4">Thana/Upzila:</span>
+                <span className="col-span-8"> {address?.thana}</span>
+              </div>
+              <div className="grid grid-cols-12">
+                <span className="text-gray-400 col-span-4">City/District:</span>
+                <span className="col-span-8"> {address?.district}</span>
+              </div>
+              <div className="grid grid-cols-12">
+                <span className="text-gray-400 col-span-4">Division:</span>
+                <span className="col-span-8"> {address?.division}</span>
+              </div>
+            </div>
+            <Link
+              href="/account/address/addressedit"
+              className="text-blue-500 font-semibold flex items-center text-sm mt-5 gap-2"
+            >
+              <span>EDIT</span>
+              <MoveRight size="20" />
+            </Link>
+          </div>
+        </div>
+      )}
     </>
   );
 };

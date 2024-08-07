@@ -5,7 +5,7 @@ import QuantityButton from "./QuantityButton";
 
 const CartCard = ({ item, removeFromCart }) => {
   return (
-    <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700  w-20 h-32 ">
+    <tr className="bg-white border-b dark:bg-cardBlack dark:border-gray-700  w-20 h-32 ">
       <td className="px-6 py-3">
         <Image
           src={item?.thumbnail}
@@ -32,7 +32,7 @@ const CartCard = ({ item, removeFromCart }) => {
       </th>
       <td className="px-6 py-4 ">
         <h1 className="sm:col-span-1 text-base font-semibold text-gray-800 dark:text-gray-400">
-          ${item?.price * item?.quantity}
+          ${item?.discountPrice * item?.quantity}
         </h1>
       </td>
       <td className="px-6 py-4">

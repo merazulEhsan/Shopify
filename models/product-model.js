@@ -49,10 +49,7 @@ const productSchema = new Schema({
     type: Array,
     required: false,
   },
-  cart: {
-    type: Array,
-    required: false,
-  },
+
   thumbnail: {
     type: String,
     required: true,

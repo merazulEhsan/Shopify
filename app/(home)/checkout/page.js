@@ -1,18 +1,19 @@
-import BreadCrumb from "@/components/BreadCrumb";
+import { getAddress } from "@/queries/account";
+import { generateOrderId } from "@/queries/orders";
+import { redirect } from "next/navigation";
+import { useAuth } from "../hooks/useAuth";
+import BillingInfo from "./_components/BillingInfo";
 
-import BillingAddress from "./_components/BillingAddress";
-import OrderSummary from "./_components/OrderSummary";
+const CheckOutPage = async () => {
+  const { userId, session } = await useAuth();
+  const orderId = await generateOrderId();
+  const address = await getAddress(userId);
 
-const CheckoutPage = () => {
-  return (
-    <div className="bg-ghostWhite dark:bg-customBlack">
-      <BreadCrumb value="Check Out" />
-      <div className="container grid grid-cols-12 items-start pb-16 gap-6 ">
-        <BillingAddress />
-        <OrderSummary />
-      </div>
-    </div>
-  );
+  if (!session) {
+    redirect("/login");
+  }
+
+  return <BillingInfo uid={userId} oId={orderId} address={address} />;
 };
 
-export default CheckoutPage;
+export default CheckOutPage;
