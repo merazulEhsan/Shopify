@@ -2,19 +2,18 @@ import { Search } from "lucide-react";
 
 const SearchBox = () => {
   return (
-    <div className="lg:w-full max-w-lg relative md:flex hidden font-poppins ">
-      <span className="absolute left-4 top-3 text-gray-400">
-        <Search />
-      </span>
+    <div className="lg:w-full max-w-lg relative md:flex hidden font-jost text-sm tracking-wide text-slate-500 ">
       <input
         type="text"
         name="search"
         id="search"
-        className="w-full border border-secondary  border-r-0 pl-12 py-2.5 pr-3 rounded-l-md focus:outline-none hidden md:flex dark:bg-cardBlack"
+        className="w-full border border-slate-300 rounded-full py-2.5 pl-4 focus:outline-none focus:border-secondary hidden md:flex dark:bg-cardBlack"
         placeholder="Search for products..."
       />
-      <button className="bg-secondary border border-secondary text-white px-8 rounded-r-md hover:bg-transparent hover:text-secondary transition hidden md:flex items-center">
-        Search
+      <button className="hover:bg-transparent hover:text-secondary transition hidden md:flex items-center">
+        <span className="absolute right-1.5 text-white bg-secondary rounded-full p-1">
+          <Search />
+        </span>
       </button>
     </div>
   );

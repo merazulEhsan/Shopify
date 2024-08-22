@@ -25,9 +25,9 @@ const Sidebar = async () => {
                   height={112}
                 />
               </div>
-              <div className="mt-4">
-                <h5 className="text-lg font-semibold">{userInfo.name}</h5>
-                <p className="text-slate-400">{userInfo.email}</p>
+              <div className="mt-4 font-jost">
+                <h5 className="text-base font-semibold">{userInfo.name}</h5>
+                <p className="text-slate-500 text-sm">{userInfo.email}</p>
               </div>
             </div>
           </div>

@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   darkMode: ["class"],
   content: [
@@ -17,13 +18,13 @@ module.exports = {
     },
     container: {
       center: true,
-      padding: "1rem",
     },
     extend: {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
         roboto: ["Roboto", "sans-serif"],
         jost: ["Jost", "sans-serif"],
+        openSans: ["Open Sans", "sans-serif"],
       },
       colors: {
         primary: "#fd3d57",

@@ -26,7 +26,7 @@ const Header = ({ wishlist }) => {
   const { cartItems } = useCart();
 
   return (
-    <header className="py-4 dark:bg-cardBlack">
+    <header className="py-4 dark:bg-cardBlack ">
       <div className="container flex items-center justify-between">
         <Link href="/">
           <div className="flex items-center space-x-1">
@@ -46,25 +46,25 @@ const Header = ({ wishlist }) => {
         <div className="md:flex items-center space-x-4 font-roboto hidden">
           <Link
             href="/wishlist"
-            className="text-center text-gray-700 dark:text-slate-200 hover:text-primary transition relative"
+            className="text-center text-gray-700 dark:text-slate-200 hover:text-secondary transition relative"
           >
             <div className="text-xl">
               <FontAwesomeIcon icon={faHeart} />
             </div>
             <div className="text-xs leading-3">Wishlist</div>
-            <div className="absolute right-0 -top-1 w-4 h-4 rounded-full flex items-center justify-center bg-primary text-white text-xs">
+            <div className="absolute right-0 -top-1 w-4 h-4 rounded-full flex items-center justify-center bg-secondary text-white text-xs">
               {wishlist ? wishlist?.length : 0}
             </div>
           </Link>
           <Link
             href="/cart"
-            className="text-center text-gray-700 dark:text-slate-200 hover:text-primary transition relative"
+            className="text-center text-gray-700 dark:text-slate-200 hover:text-secondary transition relative"
           >
             <div className="text-xl">
               <FontAwesomeIcon icon={faCartArrowDown} />
             </div>
             <div className="text-xs leading-3">Cart</div>
-            <div className="absolute -right-3 -top-1 w-4 h-4 rounded-full flex items-center justify-center bg-primary text-white text-xs ">
+            <div className="absolute -right-3 -top-1 w-4 h-4 rounded-full flex items-center justify-center bg-secondary text-white text-xs">
               {cartItems.length}
             </div>
           </Link>

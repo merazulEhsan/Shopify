@@ -39,7 +39,9 @@ function Menu() {
           >
             <div className="flex items-center gap-x-2 ">
               <span>{item?.icon}</span>
-              <h6 className="mb-0 font-medium text-base ">{item?.label}</h6>
+              <h6 className="mb-0 font-medium text-sm font-openSans ">
+                {item?.label}
+              </h6>
             </div>
           </Link>
         </li>

@@ -55,12 +55,14 @@ function AdminSideBarMenu() {
             className={` flex items-center py-2 rounded px-3 ${
               pathname === item.href
                 ? "bg-blue-100 dark:bg-slate-800 text-secondary"
-                : "text-slate-700 dark:text-slate-300"
+                : "text-slate-800 dark:text-slate-300"
             }`}
           >
             <div className="flex items-center gap-x-2 ">
               <span>{item?.icon}</span>
-              <h6 className="mb-0 font-medium text-base">{item?.label}</h6>
+              <h1 className="mb-0 font-medium font-openSans text-sm">
+                {item?.label}
+              </h1>
             </div>
           </Link>
         </li>

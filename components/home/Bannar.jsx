@@ -21,7 +21,7 @@ const Bannar = () => {
     },
   ];
   return (
-    <div className="px-5 grid grid-cols-12 justify-between space-x-2 my-2 container">
+    <div className="grid grid-cols-12 justify-between space-x-2 my-2 md:container">
       <Carousel
         plugins={[
           Autoplay({
@@ -32,17 +32,17 @@ const Bannar = () => {
           align: "start",
           loop: true,
         }}
-        className="col-span-9"
+        className="md:col-span-9 col-span-12 "
       >
         <CarouselContent>
           {banner.map((ban, index) => (
             <CarouselItem key={index}>
-              <div className="flex items-center justify-center h-[520px]">
+              <div className="flex items-center justify-center md:h-[520px]">
                 <Image
-                  className="w-full h-full object-fill rounded"
+                  className="w-full h-full object-fill md:rounded"
                   width={500}
                   height={500}
-                  src={ban.img}
+                  src={ban?.img}
                   alt=""
                   quality={100}
                 />{" "}
@@ -50,11 +50,11 @@ const Bannar = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="shadow" />
-        <CarouselNext className="shadow" />
+        <CarouselPrevious className="shadow text-white left-4" />
+        <CarouselNext className="shadow text-white right-4 " />
       </Carousel>
 
-      <div className="col-span-3 h-[530px] ">
+      <div className="md:col-span-3 col-span-full md:h-[530px]">
         <div class="space-y-3 ">
           <div class="flex flex-wrap">
             <Image

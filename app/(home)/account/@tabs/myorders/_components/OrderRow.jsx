@@ -1,10 +1,11 @@
+import moment from "moment";
 import Link from "next/link";
 
 const OrderRow = ({ item }) => {
   return (
     <tr className="bg-white border-b dark:bg-cardBlack dark:border-gray-700   ">
       <td className="px-6 py-4">{item?.orderId}</td>
-      <td className="px-6 py-4">{item?.date?.slice(4, 15)}</td>
+      <td className="px-6 py-4">{moment(new Date(item?.date)).format("ll")}</td>
       <td className="px-6 py-4 text-sky-500">{item?.status}</td>
       <td className="px-6 py-4">
         TK.

@@ -1,3 +1,7 @@
+import {
+  replaceMongoIdInArray,
+  replaceMongoIdInObject,
+} from "@/lib/data-utils";
 import { orderModel } from "@/models/order-model";
 import { dbConnect } from "@/services/dbConnection";
 
@@ -26,4 +30,17 @@ async function generateOrderId() {
   return id?.length;
 }
 
-export { createOrder, generateOrderId, getOrder };
+async function getAllOrder() {
+  await dbConnect();
+
+  const orderlist = await orderModel?.find().lean();
+  return replaceMongoIdInArray(orderlist);
+}
+async function getOrderById(id) {
+  await dbConnect();
+
+  const order = await orderModel?.findById(id).lean();
+  return replaceMongoIdInObject(order);
+}
+
+export { createOrder, generateOrderId, getAllOrder, getOrder, getOrderById };

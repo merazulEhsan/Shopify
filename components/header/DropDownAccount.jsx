@@ -20,7 +20,7 @@ const DropDownAccount = ({ user }) => {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <div className="flex items-center gap-2">
-          <Avatar className="h-10 w-10">
+          <Avatar className="h-10 w-10 bg-white text-slate-600">
             <AvatarImage src="" alt="@shadcn" />
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
@@ -37,25 +37,25 @@ const DropDownAccount = ({ user }) => {
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <Link href="/account">
-            <DropdownMenuItem className="dark:hover:text-customBlack">
+            <DropdownMenuItem className="dark:hover:text-customBlack hover:bg-secondary/20">
               <User className="mr-2 h-4 w-4" />
               <span>Profile</span>
             </DropdownMenuItem>
           </Link>
           <Link href="/cart">
-            <DropdownMenuItem className="dark:hover:text-customBlack">
+            <DropdownMenuItem className="dark:hover:text-customBlack ">
               <ShoppingCart className="mr-2 h-4 w-4" />
               <span>Cart</span>
             </DropdownMenuItem>
           </Link>
           <Link href="/wishlist">
-            <DropdownMenuItem className="dark:hover:text-customBlack">
+            <DropdownMenuItem className="dark:hover:text-customBlack ">
               <Heart className="mr-2 h-4 w-4" />
               <span>Wishlist</span>
             </DropdownMenuItem>
           </Link>
           <Link href="/admin">
-            <DropdownMenuItem className="dark:hover:text-customBlack">
+            <DropdownMenuItem className="dark:hover:text-customBlack ">
               <LayoutDashboard className="mr-2 h-4 w-4" />
               <span>Admin Panel</span>
             </DropdownMenuItem>
@@ -63,7 +63,7 @@ const DropDownAccount = ({ user }) => {
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
 
-        <DropdownMenuItem className="dark:hover:text-customBlack">
+        <DropdownMenuItem className="dark:hover:text-customBlack ">
           <Logout />
         </DropdownMenuItem>
       </DropdownMenuContent>

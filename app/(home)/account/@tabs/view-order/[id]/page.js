@@ -1,5 +1,6 @@
 import { useAuth } from "@/app/(home)/hooks/useAuth";
 import { getOrder } from "@/queries/orders";
+import moment from "moment";
 
 const OrderDetailsPage = async ({ params: { id } }) => {
   const { userId } = await useAuth();
@@ -11,15 +12,15 @@ const OrderDetailsPage = async ({ params: { id } }) => {
     <div className="p-6 bg-white dark:bg-cardBlack mx-auto shadow min-h-72  rounded-md">
       <p className="dark:text-slate-200 text-gray-500 font-poppins">
         Order{" "}
-        <strong className="text-black dark:text-sky-500">
+        <strong className="text-black dark:text-secondary">
           {orderView?.orderId}
         </strong>{" "}
         was placed on{" "}
-        <strong className="text-black dark:text-sky-500">
-          {orderView?.date?.slice(4, 15)}
+        <strong className="text-black dark:text-secondary">
+          {moment(new Date(orderView?.date)).format("ll")}
         </strong>{" "}
         and is currently{" "}
-        <strong className="text-black dark:text-sky-500">
+        <strong className="text-black dark:text-secondary">
           {orderView?.status}
         </strong>
         .
@@ -37,7 +38,7 @@ const OrderDetailsPage = async ({ params: { id } }) => {
         {orderView?.orderSummary?.cartItems.map((item) => (
           <div
             key={item?.id}
-            className="flex justify-between items-center border-b border-gray-200 py-3 text-sm d"
+            className="flex justify-between items-center border-b border-gray-200 py-3 text-sm text-secondary"
           >
             <div>
               <p>
@@ -45,20 +46,18 @@ const OrderDetailsPage = async ({ params: { id } }) => {
               </p>
               {item?.size && <span>Size: {item?.size}</span>}
             </div>
-            <p className="font-semibold text-green-500">
-              TK.{item?.discountPrice}
-            </p>
+            <p className="font-semibold ">TK.{item?.discountPrice}</p>
           </div>
         ))}
         <div className="flex justify-between items-center border-b border-gray-200 py-3 font-semibold text-sm">
           <p>SubTotal</p>
-          <p className="text-green-500">
+          <p className="text-secondary">
             TK.{orderView?.orderSummary?.subtotal}
           </p>
         </div>
         <div className="flex justify-between items-center border-b border-gray-200 py-3 font-semibold text-sm">
           <p>Shipping Fee</p>
-          <p className="text-green-500">
+          <p className="text-secondary">
             TK.{orderView?.orderSummary?.shippingFee}
           </p>
         </div>
@@ -66,7 +65,7 @@ const OrderDetailsPage = async ({ params: { id } }) => {
           <p>Payment Method</p>
           <p>{orderView?.orderSummary?.payMethod}</p>
         </div>
-        <div className="flex justify-between items-center text-green-500  py-3 font-semibold text-lg">
+        <div className="flex justify-between items-center text-secondary  py-3 font-semibold text-lg">
           <p>Total</p>
           <p>TK.{orderView?.orderSummary?.total}</p>
         </div>

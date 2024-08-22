@@ -23,7 +23,7 @@ function Layout({ children }) {
             </div>
             <AdminSideBarMenu />
           </div>
-          <main className="lg:pl-64 pt-[80px] h-full">{children}</main>
+          <main className="lg:pl-60 pt-[60px] h-full">{children}</main>
         </div>
       </body>
     </html>
