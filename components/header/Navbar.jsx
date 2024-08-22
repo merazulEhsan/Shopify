@@ -12,7 +12,7 @@ const Navbar = async () => {
   const userInfo = await getUserInfo(userId);
 
   return (
-    <nav className="md:block hidden border-t border-gray-300 dark:border-gray-700  dark:bg-cardBlack bg-[#e6effd]">
+    <nav className="md:block hidden border-t border-gray-300 dark:border-gray-700  dark:bg-cardBlack bg-nav">
       <div className="container flex items-center h-14">
         <div className="px-2 bg-white rounded-full h-10 hover:bg-secondary/25 flex items-center cursor-pointer relative group transition ease-linear duration-300">
           <div className="text-white w-8 h-8 text-center rounded-full bg-secondary p-1">

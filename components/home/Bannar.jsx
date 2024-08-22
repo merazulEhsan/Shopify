@@ -55,41 +55,41 @@ const Bannar = () => {
       </Carousel>
 
       <div className="md:col-span-3 col-span-full md:h-[530px]">
-        <div class="space-y-3 ">
-          <div class="flex flex-wrap">
+        <div className="space-y-3 ">
+          <div className="flex flex-wrap">
             <Image
               height={500}
               width={500}
               alt="gallery"
-              class="block h-40 w-full rounded object-fill object-center"
+              className="block h-40 w-full rounded object-fill object-center"
               src="/assets/banner2.jpg"
             />
           </div>
-          <div class="flex flex-wrap">
+          <div className="flex flex-wrap">
             <Image
               height={500}
               width={500}
               alt="gallery"
-              class="block h-40 w-full rounded object-fill object-center"
+              className="block h-40 w-full rounded object-fill object-center"
               src="/assets/banner2.jpg"
             />
           </div>
-          <div class="flex  space-x-3">
-            <div class="w-1/2">
+          <div className="flex  space-x-3">
+            <div className="w-1/2">
               <Image
                 height={500}
                 width={500}
                 alt="gallery"
-                class="block h-44 w-full rounded object-fill object-center"
+                className="block h-44 w-full rounded object-fill object-center"
                 src="/assets/banner2.jpg"
               />
             </div>
-            <div class="w-1/2">
+            <div className="w-1/2">
               <Image
                 height={500}
                 width={500}
                 alt="gallery"
-                class="block h-44 w-full rounded object-fill object-center"
+                className="block h-44 w-full rounded object-fill object-center"
                 src="/assets/banner2.jpg"
               />
             </div>

@@ -32,7 +32,7 @@ const CartCard = ({ item, removeFromCart }) => {
       </th>
       <td className="px-6 py-4 ">
         <h1 className="sm:col-span-1 text-base font-semibold text-gray-800 dark:text-gray-400">
-          ${item?.discountPrice * item?.quantity}
+          Tk.{item?.discountPrice * item?.quantity}
         </h1>
       </td>
       <td className="px-6 py-4">

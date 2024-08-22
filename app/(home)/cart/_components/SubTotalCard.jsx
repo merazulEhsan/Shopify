@@ -10,7 +10,7 @@ const SubTotalCard = ({ calculateTotal, shipping, setShipping, subtotal }) => {
     <div className="md:col-span-3 col-span-12 p-4 rounded shadow-xl dark:bg-cardBlack">
       <div className="flex justify-between border-b border-gray-300 text-gray-800 font-semibold py-3 text-base dark:text-gray-400">
         <p>Subtotal</p>
-        <p>${calculateTotal()}</p>
+        <p>Tk.{calculateTotal()}</p>
       </div>
       <div className="space-y-2 mt-2 border-b border-gray-300 ">
         <div className="flex justify-between font-semibold text-gray-800 py-2 text-sm dark:text-gray-400">
@@ -29,7 +29,7 @@ const SubTotalCard = ({ calculateTotal, shipping, setShipping, subtotal }) => {
                 <span> Inside Tangail</span>
               </Label>
             </div>
-            <span className="text-end text-sm">$60 </span>
+            <span className="text-end text-sm">Tk.60 </span>
           </div>
 
           <div className="flex items-center justify-between space-x-2 dark:text-gray-400">
@@ -44,14 +44,14 @@ const SubTotalCard = ({ calculateTotal, shipping, setShipping, subtotal }) => {
                 <span> Outside Tangail</span>
               </Label>
             </div>
-            <span className="text-end text-sm">$130</span>
+            <span className="text-end text-sm">Tk.130</span>
           </div>
         </RadioGroup>
       </div>
 
       <div className="flex justify-between text-gray-800 font-medium py-3 uppercas dark:text-gray-400">
         <p className="font-semibol">Total</p>
-        <p>${subtotal}</p>
+        <p>Tk.{subtotal}</p>
       </div>
 
       <Link

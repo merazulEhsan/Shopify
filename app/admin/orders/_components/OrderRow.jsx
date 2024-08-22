@@ -14,9 +14,30 @@ const OrderRow = ({ order }) => {
     <tr className="bg-white border-b dark:bg-cardBlack dark:border-gray-700 font-openSans text-black">
       <td className="px-6 py-4">{order?.orderId}</td>
       <td className="px-6 py-4">{order?.billingAddress?.fullName}</td>
-      <td className="px-6 py-4 text-sky-500">qtn</td>
-      <td className="px-6 py-4">BDT.{order?.orderSummary?.total}</td>
-      <td className="px-6 py-4">{order?.status}</td>
+      <td className="px-6 py-4 ">
+        {order?.orderSummary?.cartItems?.reduce((total, item) => {
+          return total + item.quantity;
+        }, 0)}
+      </td>
+      <td className="px-6 py-4 flex items-center">
+        Tk. {order?.orderSummary?.total}
+      </td>
+      <td className="px-6 py-4">
+        <span
+          className={`${
+            order?.status === "Processing" &&
+            "text-amber-600 bg-amber-100 px-2 py-0.5 rounded text-xs"
+          } ${
+            order?.status === "Delivered" &&
+            "text-green-600 bg-green-100 px-2 py-0.5 rounded text-xs"
+          } ${
+            order?.status === "Denied" &&
+            "text-red-600 bg-red-100 px-2 rounded text-xs"
+          }`}
+        >
+          {order?.status}
+        </span>
+      </td>
 
       <td className="px-6 py-4">
         {moment(new Date(order?.date)).format("ll")}

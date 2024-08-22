@@ -48,7 +48,7 @@ const OrderSummary = ({
                 x{item?.quantity}
               </p>
               <p className="text-gray-800 dark:text-gray-300 font-medium">
-                ${item?.discountPrice}
+                Tk.{item?.discountPrice}
               </p>
             </div>
           ))
@@ -57,17 +57,17 @@ const OrderSummary = ({
 
       <div className="flex justify-between border-b border-gray-200 mt-1 text-gray-800 dark:text-gray-300 font-medium py-3 uppercas text-sm">
         <p>Subtotal</p>
-        <p>${calculateTotal()}</p>
+        <p>Tk.{calculateTotal()}</p>
       </div>
 
       <div className="flex justify-between border-b border-gray-200 mt-1 text-gray-800 dark:text-gray-300 font-medium py-3 uppercas text-sm">
         <p>Sipping Cost</p>
-        <p>${shipping}</p>
+        <p>Tk.{shipping}</p>
       </div>
 
       <div className="flex justify-between text-gray-800 dark:text-gray-300 font-medium py-3 uppercas text-sm">
         <p className="font-semibold">Total</p>
-        <p>${subtotal}</p>
+        <p>Tk.{subtotal}</p>
       </div>
 
       <FormField
@@ -92,6 +92,15 @@ const OrderSummary = ({
                       <span> Cash on Delevery</span>
                     </Label>
                   </div>
+                  <p
+                    className={`${
+                      field.value === "COD"
+                        ? "block bg-nav  rounded-sm "
+                        : "hidden"
+                    } px-2 py-1`}
+                  >
+                    Pay with cash upon delivery.
+                  </p>
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem
                       value="Payment"
@@ -102,6 +111,15 @@ const OrderSummary = ({
                       <span> Payment</span>
                     </Label>
                   </div>
+                  <p
+                    className={`${
+                      field.value === "Payment"
+                        ? "block bg-nav  rounded-sm "
+                        : "hidden"
+                    } px-2 py-1`}
+                  >
+                    Feature comming soon.
+                  </p>
                 </div>
               </RadioGroup>
             </FormControl>

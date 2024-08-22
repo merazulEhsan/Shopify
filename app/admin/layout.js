@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Toaster } from "sonner";
 import "../globals.css";
 import AdminSideBarMenu from "./_components/AdminSideBarMenu";
 
@@ -23,8 +24,9 @@ function Layout({ children }) {
             </div>
             <AdminSideBarMenu />
           </div>
-          <main className="lg:pl-60 pt-[60px] h-full">{children}</main>
+          <main className="lg:pl-60 pt-[60px] h-full py-6">{children}</main>
         </div>
+        <Toaster />
       </body>
     </html>
   );

@@ -33,6 +33,7 @@ module.exports = {
         whiteSmoke: "#f1f3f4",
         customBlack: "#0b1120",
         cardBlack: "#0f172a",
+        nav: "#e6effd",
       },
     },
   },

@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import { toast } from "sonner";
 import CartModal from "./customeUi/CartModal";
-import { Button } from "./ui/button";
 import { Dialog, DialogTrigger } from "./ui/dialog";
 
 const WishlistCard = ({ wishlist, userId }) => {
@@ -36,12 +35,18 @@ const WishlistCard = ({ wishlist, userId }) => {
         </p>
       </div>
       <div className="sm:col-span-2 text-lg font-semibold text-center dark:text-gray-300">
-        ${wishlist?.discountPrice}
+        Tk.{wishlist?.discountPrice}
       </div>
 
       <Dialog>
         <DialogTrigger className="sm:col-span-2 ">
-          <Button className="black-button"> Add to Cart</Button>
+          <button
+            asChild
+            className="cursor-pointer py-2 rounded text-white bg-black border border-black hover:bg-white hover:text-black transition ease-linear duration-300 dark:bg-primary dark:hover:bg-white px-10"
+          >
+            {" "}
+            Add to Cart
+          </button>
         </DialogTrigger>
         <CartModal product={wishlist} />
       </Dialog>
