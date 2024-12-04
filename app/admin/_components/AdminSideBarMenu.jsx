@@ -47,14 +47,14 @@ const menu = [
 
 function AdminSideBarMenu() {
   const pathname = usePathname();
-  console.log(pathname);
+
   return (
-    <ul className="list-none sidebar-nav mb-0 mt-3" id="navmenu-nav">
+    <ul className="list-none sidebar-nav mb-0 mt-24" id="navmenu-nav">
       {menu.map((item, i) => (
         <li className="navbar-item account-menu" key={i}>
           <Link
             href={item.href}
-            className={`flex items-center py-2 my-1 rounded px-3 ${
+            className={`flex items-center py-2 my-2 rounded-full px-5 ${
               pathname === item?.href
                 ? "bg-blue-100 dark:bg-slate-800 text-secondary"
                 : "text-slate-800 dark:text-slate-300"

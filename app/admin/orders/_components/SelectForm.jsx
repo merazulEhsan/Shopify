@@ -45,7 +45,10 @@ export function SelectForm({ status, id }) {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="w-60 flex gap-4">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="w-auto flex gap-4"
+      >
         <FormField
           control={form.control}
           name="status"

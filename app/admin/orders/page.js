@@ -10,7 +10,7 @@ const OrdersPage = async () => {
         <h1 className="text-2xl font-openSans font-semibold">Order List</h1>
       </div>
 
-      <div className="md:col-span-9 col-span-12  rounded bg-white dark:bg-cardBlack mx-auto shadow p-10">
+      <div className="md:col-span-9 col-span-12  rounded-md bg-white dark:bg-cardBlack mx-auto shadow p-10">
         <OrderContent allOrders={allOrders} />
       </div>
     </div>

@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import { getOrderById } from "@/queries/adminQueries/orders";
 import moment from "moment/moment";
 import OrderDetailsCard from "../../_components/OrderDetailsCard";
@@ -26,6 +27,9 @@ const page = async ({ params: { id } }) => {
             Change Status:
           </span>
           <SelectForm status={singleOrder?.status} id={id} />
+          <Button className="bg-green-100 text-green-500 px-6 hover:bg-green-500  hover:text-white font-openSans transition ease-linear duration-500">
+            Invoice
+          </Button>
         </div>
       </div>
 

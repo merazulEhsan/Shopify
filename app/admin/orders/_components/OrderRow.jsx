@@ -1,3 +1,4 @@
+import { Badge } from "@/components/ui/badge";
 import {
   Tooltip,
   TooltipContent,
@@ -11,7 +12,7 @@ import Link from "next/link";
 
 const OrderRow = ({ order }) => {
   return (
-    <tr className="bg-white border-b dark:bg-cardBlack dark:border-gray-700 font-openSans text-black">
+    <tr className=" bg-white shadow-sm border-b dark:bg-cardBlack dark:border-gray-700 font-openSans text-black">
       <td className="px-6 py-4">{order?.orderId}</td>
       <td className="px-6 py-4">{order?.billingAddress?.fullName}</td>
       <td className="px-6 py-4 ">
@@ -23,7 +24,21 @@ const OrderRow = ({ order }) => {
         Tk. {order?.orderSummary?.total}
       </td>
       <td className="px-6 py-4">
-        <span
+        <Badge
+          className={`${
+            order?.status === "Processing" &&
+            "text-amber-600 bg-amber-100  rounded text-xs"
+          } ${
+            order?.status === "Delivered" &&
+            "text-green-600 bg-green-100  rounded text-xs"
+          } ${
+            order?.status === "Denied" &&
+            "text-red-600 bg-red-100 rounded text-xs"
+          }`}
+        >
+          {order?.status}
+        </Badge>
+        {/* <span
           className={`${
             order?.status === "Processing" &&
             "text-amber-600 bg-amber-100 px-2 py-0.5 rounded text-xs"
@@ -36,7 +51,7 @@ const OrderRow = ({ order }) => {
           }`}
         >
           {order?.status}
-        </span>
+        </span> */}
       </td>
 
       <td className="px-6 py-4">
